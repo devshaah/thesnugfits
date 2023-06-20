@@ -1,0 +1,40 @@
+.products{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-top: 12vh;
+    margin-left: 5vw;
+    gap: 5vh;
+}
+
+.head{
+    margin: 1vh;
+}
+
+.xyz{
+    background-color: black;
+    color: white;
+
+}
+
+@media screen and (max-width: 480px){
+
+    .products{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .accordion{
+        text-align: start;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 480px){
+
+    .accordion{
+        width: 30%;
+        text-align: start;
+    }
+}
