@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navbar'
-
+import Footer from '../components/footer'
 import tshirt from '../assets/tshirt.jpeg'
 import hoodies from '../assets/hoodies.jpeg'
 import corporate from '../assets/corporate.jpeg'
@@ -57,7 +57,7 @@ const services = () => {
         })
       }
       </div>
-
+      <Footer/>
     </div>
   )
 }

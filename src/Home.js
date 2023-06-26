@@ -8,6 +8,28 @@ import banner1 from './assets/banner1.png'
 import banner2 from './assets/Untitled.png'
 import Services from './pages/services'
 import Footer from './components/footer';
+import logo from "./assets/logo.jpg";
+
+import atharva from './assets/clients/atharva.png'
+import thakur from './assets/clients/5ntf3oqg.jbg.webp'
+import fm from './assets/clients/3FM LOGO.jpeg'
+import besick from './assets/clients/BESICK LOGO.png'
+import secureanx from './assets/clients/securanx.png'
+import koverify from './assets/clients/koverify.png'
+
+import fabric from './assets/sticker/quality.png'
+import handcrafted from './assets/sticker/handcrafted.png'
+import inhouse from './assets/sticker/inhouse cut to pack.png'
+import delivery from './assets/sticker/delivery (1).png'
+
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import WarehouseIcon from '@mui/icons-material/Warehouse';
+import AddTaskIcon from '@mui/icons-material/AddTask';
+
+import review1 from './assets/reviews/review 1.png'
+import review2 from './assets/reviews/review 2.png'
+import review3 from './assets/reviews/review 3.png'
 
 const Home = () => {
 
@@ -42,7 +64,7 @@ const Home = () => {
             <h1>How we Work?</h1>
             <p>Let's get started</p>
         <div className='work'>
-            <div className='workcard'>
+            <div className='workcard '>
             <h2>Design</h2>
             <ul>
                 <li>If you already possess a logo, we can convert it into a digital format for you.</li>
@@ -77,12 +99,118 @@ const Home = () => {
 
 
         </div>
+    </div>
+
+    <div className='whychooseus'>
+        <h1>Why <b>Choose Us </b></h1>
+        <div className='boxes'>
+            <div className='asd'>
+                <div className='box'>
+                <div className='chooseicon'><img src={fabric} className='sticker'/></div>
+                <h4>Premium Handcrafted Fabric</h4>
+                </div>
+                <div className='desktop no'>01</div>
+            </div>
+            <div className='asd'>
+                <div className='desktop no'>02</div>
+                <div className='box'>
+                    <div className='chooseicon'>
+                    <img src={delivery} className='sticker'/>
+                    </div>       
+                <h4>On Time Delivery</h4>
+                </div>
+            </div>
+            <div className='asd'>
+                <div className='box'>
+                <div className='chooseicon'><img src={inhouse} className='sticker'/></div>
+                <h4>In-House cut-to-pack</h4>
+                </div>
+                <div className='desktop no'>03</div>
+            </div>
+            <div className='asd'>
+                <div className='desktop no'>04</div>
+                <div className='box'>
+                <div className='chooseicon'><img src={handcrafted} className='sticker'/></div>
+                <h4>Quality with Affordability</h4>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div className='processhead'>
+            <h1 >Path your Product goes through to reach you ...</h1>
+    <div className='process'>
+        <div className='processbox'>
+              <h3>Fabric Selection</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Cutting</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Embroidery</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Printing</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Sewing / Stiching</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Ironing</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Checking</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Packing</h3>
+        </div>
+        <div className='processbox'>
+              <h3>Delivery</h3>
+        </div>
+
+    </div>
+    </div>
+    <div id='clients' className='ourclients'>
+        <h1>Our Clients</h1>
+        <div className='clients'> 
+        <img src={atharva} className='client'/>
+        <img src={thakur} className='client'/>
+        <img src={fm} className='client'/>
+        <img src={besick} className='client'/>
+        <img src={secureanx} className='client'/>
+        <img src={koverify} className='client'/>
+        </div>
+        <h4>Want to be our Client?</h4>
+        <button onClick={()=>navigate("/contact")} className='contactbtn'>Contact Us</button>
 
     </div>
 
-    <div className='services'>
-        
+    <div className='testimons'>
+        <h1>What our customers have to say</h1>
+        <div className='testimonials'>
+        <div className='testimonial'> 
+        {/* <h4>High-Quality Clothing</h4> */}
+         {/* <p className='review'>I've been a customer of TheSnugFits for a while now, and I must say their clothing is top-notch. The materials used are of excellent quality, and the stitching is always neat and durable. I love how their clothes fit me perfectly and make me feel confident. Keep up the great work!</p> */}
+         <img className='review' src={review1}/>
+        </div>
+        <div className='testimonial'> 
+        {/* <h4>Fast and Efficient Service</h4>
+         <p className='review'>I recently ordered a few outfits from TheSnugFits, and I was impressed by their speedy and efficient service. The order was processed quickly, and the items arrived well-packaged and in excellent condition. The company's attention to detail and prompt communication made the whole shopping experience hassle-free. I would definitely recommend them.</p> */}
+         <img className='review' src={review2}/>
+        </div>
+        <div  className='testimonial'> 
+        {/* <h4>Stylish and Trendy Designs</h4>
+         <p className='review'>TheSnugFits truly stands out when it comes to their fashionable and trendy designs. Every time I wear their clothes, I receive compliments and inquiries about where I got them. The company seems to have its finger on the pulse of the latest fashion trends. Their unique and stylish pieces allow me to express my personal style with confidence. I'm a loyal customer and always look forward to their new collections.</p> */}
+         <img className='review' src={review3}/>
+        </div>
+        </div>
+
     </div>
+
+
     <div className='homecontact'>
     <h1>Work with Us ?</h1>
     <button onClick={()=>navigate("/contact")} className='contactbtn'>Contact Us</button>

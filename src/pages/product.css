@@ -2,7 +2,7 @@
     background-color: white;
     display: flex;
     flex-direction: row;
-    margin-top: 12vh;
+    margin-top: 18vh;
     margin-left: 5vw;
     gap: 5vh;
 }
@@ -11,11 +11,46 @@
     margin: 1vh;
 }
 
-.xyz{
-    background-color: black;
-    color: white;
-
+.header{
+    padding: 0.5rem 0.8rem;
 }
+
+.productimg{
+    width: 17vw;
+}
+
+.productbox:hover{
+    transform: scale(1.05);
+}
+
+.productbox{
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.aclist{
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.product{
+    margin: 1rem;
+}
+
+
+.displaybox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60vw;
+}
+
+.productname{
+    width: 100%;
+}
+
 
 @media screen and (max-width: 480px){
 
@@ -29,6 +64,17 @@
         text-align: start;
         width: 80%;
     }
+
+    .productimg{
+        width: 80vw;
+    }
+
+    .displaybox{
+        flex-direction: column;
+        width: 90vw;
+    }
+
+
 }
 
 @media screen and (min-width: 480px){

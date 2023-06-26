@@ -1,3 +1,9 @@
+body{
+    overflow-x: hidden;
+    /* font-family: 'Mukta'; */
+    /* font-family: 'Caprasimo'; */
+    font-family: 'Raleway', sans-serif;
+}
 
 h1,h2,h3,h4,h5,h5,p{
     margin: 0.5rem;
@@ -6,12 +12,12 @@ h1,h2,h3,h4,h5,h5,p{
 
 /* NAVBAR */
 
-.navbar{
+.nav{
     /* background-color: black; */
     color: black;
     height: 12vh;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items: center;
     position: fixed;
     top: 0;
@@ -27,7 +33,8 @@ h1,h2,h3,h4,h5,h5,p{
 }
 
 .logo{
-    height: 8vh;
+    height: 10vh;
+    /* margin-left: 1.5rem; */
 }
 
 .nav-items{
@@ -38,9 +45,19 @@ h1,h2,h3,h4,h5,h5,p{
 
 }
 
+.scroll{
+    text-decoration: none;
+    color: inherit;
+    font-size: x-large;
+}
+
+
 .nav-list{
     cursor: pointer;
+    font-size: x-large;
+    text-decoration: none;
 }
+
 .nav-list:hover{
     cursor: pointer;
     transform: scale(1.1);
@@ -58,8 +75,8 @@ h1,h2,h3,h4,h5,h5,p{
 /* How it Works  */
 
 .howwework{
-    background-color: rgb(248, 242, 242);
-    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 1rem;
 }
 
@@ -67,14 +84,15 @@ h1,h2,h3,h4,h5,h5,p{
     text-align: start;
     display: flex;
     flex-direction: row;
-    padding: 1rem 1rem 3rem 1rem;
-    gap: 1rem;
+    padding: 1rem 2rem 3rem 2rem;
+    gap: 2rem;
     
 }
 
 .workcard{
     /* border: 1px solid white; */
     background-color: white;
+    color: black;
     width: 30%;
     padding: 1rem;
     border-radius: 10px;
@@ -92,6 +110,7 @@ h1,h2,h3,h4,h5,h5,p{
     height: 20vh;
     background-color: white;
     padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 .contactbtn{
@@ -101,6 +120,7 @@ h1,h2,h3,h4,h5,h5,p{
     outline: none;
     border: none;
     border-radius: 10px;
+
 }
 
 .contactbtn:hover{
@@ -112,6 +132,32 @@ h1,h2,h3,h4,h5,h5,p{
     transition: ease-in 0.1s;
 }
 
+                                    /* PROCESS */
+.process{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+}
+
+.processbox{
+    width:400px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.processbox:hover{
+    transform: scale(1.1);
+}
+
+
+.processhead{
+    padding-top: 40px;
+}
 
 /* SERVICES */
 
@@ -137,12 +183,138 @@ h1,h2,h3,h4,h5,h5,p{
     transform: scale(1.1);  
 }
 
+
+/* WHY CHOOSE US  */
+.whychooseus{
+background-color: #c1bfbf;
+padding: 5rem 3rem ;
+}
+
+
+.boxes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 1.2rem;
+    margin: 5rem 0rem;
+}
+
+.box{
+    /* height: 25vh; */
+    /* width: 15vw; */
+    width: 300px;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: white;
+    /* margin: 0.5rem; */
+    padding: 1rem 1.5rem;
+}
+
+.box:hover{
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 480px){
+    .whychooseus{
+        padding: 1rem;
+    }
+    .boxes{
+        margin: 1rem;
+        gap: 0px;
+        flex-direction: row;
+    }
+    .box{
+        width: 50vw;
+    }
+    .clients{
+        margin: 0px 0px;
+    }
+    .client{
+        width: 30vw;
+    }
+}
+
+
+/* .chooseicon{
+    text-align: left;
+    margin-left: 2vw;
+} */
+
+.sticker{
+    height: 80px;
+}
+
+.no{
+    background-color: rgb(255, 255, 255);
+    /* border: 0.1px solid black; */
+    border-radius: 90px;
+    padding: 0.6rem;
+    margin: 1rem;
+    width: 40px;
+}
+
+.no:hover{
+        background: #040504;
+        color: white;
+        transition: 0.1s ease-in
+}
+
+/* CLIENTS */
+
+.ourclients{
+    background-color: #040504;
+    /* background-color: white; */
+    color: white;
+    /* color: black; */
+    padding: 5rem 2rem;
+}
+
+
+.client{
+    height: 15vh;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.client:hover{
+    transform: scale(1.1);
+}
+
+
+/* TESTIMONIALS */
+
+.testimons{
+
+    padding: 3rem 1rem;
+}
+
+.testimonials{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.review{
+    text-align: left;
+    width: 450px;
+}
+
+.testimonial{
+    width: 30vw;
+    margin: 1rem;
+}
+
+
 /* CONTACT */
 
 .contact{
     display: flex;
     flex-direction: row;
-    margin-top: 13vh;
+    margin-top: 18vh;
     justify-content: space-around;
     align-items: center;
 }
@@ -155,10 +327,14 @@ h1,h2,h3,h4,h5,h5,p{
 
 
 .form-container {
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 4px;
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
   
   .form-group {
@@ -193,7 +369,11 @@ h1,h2,h3,h4,h5,h5,p{
     cursor: pointer;
   }  
 
-
+  @media screen and (max-width: 480px) {
+    .contact{
+        flex-direction: column-reverse;
+    }
+  }
 
 /* FOOTER  */
 .footer{
@@ -204,6 +384,7 @@ h1,h2,h3,h4,h5,h5,p{
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 0rem;
+    margin-top: 15vh;
 }
 
 .icon{
@@ -217,6 +398,10 @@ h1,h2,h3,h4,h5,h5,p{
     .work{
         flex-direction: column;
         gap: 3rem;
+    }
+
+    .logoname{
+        display: none;
     }
 
     .workcard{
@@ -238,6 +423,21 @@ h1,h2,h3,h4,h5,h5,p{
     .footer{
         flex-direction: column;
     }
+
+
+
+    .testimonials{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+    }
+
+    .testimonial{
+        height: 60vh;
+        width: 90vw;
+    }
+
   }
 
   @media screen and (min-width: 480px){

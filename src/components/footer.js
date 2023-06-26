@@ -9,7 +9,7 @@ const footer = () => {
   return (
     <div className='footer'>
       <div>
-        <h3>Copyrights &copy; </h3>
+        <h3>Copyrights &copy; 2023 by The Snug Stitch . All Rights Reserved </h3>
       </div>
       <div>
         <a href='' className='icon'><InstagramIcon/></a>
