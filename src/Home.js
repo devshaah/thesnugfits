@@ -9,7 +9,7 @@ import banner2 from './assets/Untitled.png'
 import Services from './pages/services'
 import Footer from './components/footer';
 import logo from "./assets/logo.jpg";
-
+import Process from './process';
 import atharva from './assets/clients/atharva.png'
 import thakur from './assets/clients/5ntf3oqg.jbg.webp'
 import fm from './assets/clients/3FM LOGO.jpeg'
@@ -61,7 +61,7 @@ const Home = () => {
     </div>
 
     <div className='howwework'> 
-            <h1>How we Work?</h1>
+            <h1 className='header'>HOW WE WORK?</h1>
             <p>Let's get started</p>
         <div className='work'>
             <div className='workcard '>
@@ -102,7 +102,7 @@ const Home = () => {
     </div>
 
     <div className='whychooseus'>
-        <h1>Why <b>Choose Us </b></h1>
+        <h1 className='chooseheader header'>WHY <b>CHOOSE US </b></h1>
         <div className='boxes'>
             <div className='asd'>
                 <div className='box'>
@@ -140,41 +140,9 @@ const Home = () => {
         </div>
 
     </div>
-    <div className='processhead'>
-            <h1 >Path your Product goes through to reach you ...</h1>
-    <div className='process'>
-        <div className='processbox'>
-              <h3>Fabric Selection</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Cutting</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Embroidery</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Printing</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Sewing / Stiching</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Ironing</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Checking</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Packing</h3>
-        </div>
-        <div className='processbox'>
-              <h3>Delivery</h3>
-        </div>
-
-    </div>
-    </div>
-    <div id='clients' className='ourclients'>
-        <h1>Our Clients</h1>
+        <Process/>
+    <div id='clie' className='ourclients'>
+        <h1 className='header' >OUR CLIENTS</h1>
         <div className='clients'> 
         <img src={atharva} className='client'/>
         <img src={thakur} className='client'/>
@@ -189,7 +157,7 @@ const Home = () => {
     </div>
 
     <div className='testimons'>
-        <h1>What our customers have to say</h1>
+        <h1 className='header'>HEAR FROM OUR CUSTOMERS</h1>
         <div className='testimonials'>
         <div className='testimonial'> 
         {/* <h4>High-Quality Clothing</h4> */}
@@ -212,7 +180,7 @@ const Home = () => {
 
 
     <div className='homecontact'>
-    <h1>Work with Us ?</h1>
+    <h1>WORK WITH US ?</h1>
     <button onClick={()=>navigate("/contact")} className='contactbtn'>Contact Us</button>
 </div>
 <Footer/>

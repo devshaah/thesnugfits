@@ -9,10 +9,10 @@ const footer = () => {
   return (
     <div className='footer'>
       <div>
-        <h3>Copyrights &copy; 2023 by The Snug Stitch . All Rights Reserved </h3>
+        <h3 className='copy'>Copyrights &copy; 2023 by The Snug Stitch . All Rights Reserved </h3>
       </div>
       <div>
-        <a href='' className='icon'><InstagramIcon/></a>
+        <a href='https://instagram.com/thesnugstitch?igshid=MzRlODBiNWFlZA==' className='icon'><InstagramIcon/></a>
         <a href='' className='icon'><FacebookIcon/></a>
         <a href='' className='icon'><TwitterIcon/></a>   
       </div>

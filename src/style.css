@@ -2,7 +2,8 @@ body{
     overflow-x: hidden;
     /* font-family: 'Mukta'; */
     /* font-family: 'Caprasimo'; */
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Monsterat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h5,p{
@@ -10,30 +11,34 @@ h1,h2,h3,h4,h5,h5,p{
 }
 
 
+.header{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 1500;
+}
+
 /* NAVBAR */
 
 .nav{
-    /* background-color: black; */
-    color: black;
-    height: 12vh;
+    background-color: black;
+    color: white;
+    height: 18vh;
     display: flex;
     justify-content:space-around;
     align-items: center;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 10;
-    transition-timing-function: ease-in;
-    transition: all 0.5s;
+    margin-bottom: 3vh;
 }
 
-.nav_black{
+/* .nav_black{
     background-color: black;
     color: white;
-}
+} */
 
 .logo{
-    height: 10vh;
+    height: 13vh;
     /* margin-left: 1.5rem; */
 }
 
@@ -48,13 +53,13 @@ h1,h2,h3,h4,h5,h5,p{
 .scroll{
     text-decoration: none;
     color: inherit;
-    font-size: x-large;
+    font-size: inherit;
 }
 
 
 .nav-list{
     cursor: pointer;
-    font-size: x-large;
+    font-size: medium;
     text-decoration: none;
 }
 
@@ -139,15 +144,21 @@ h1,h2,h3,h4,h5,h5,p{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: left;
+    /* text-align: left; */
     align-items: center;
 }
 
 .processbox{
-    width:400px;
-    padding: 1rem;
+    width:350px;
     margin: 1rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.processimg{
+    width: 350px;
+    height: 200px;
 }
 
 .processbox:hover{
@@ -186,10 +197,11 @@ h1,h2,h3,h4,h5,h5,p{
 
 /* WHY CHOOSE US  */
 .whychooseus{
-background-color: #c1bfbf;
-padding: 5rem 3rem ;
+background-color: white;
+padding: 1rem 2rem 2rem;
+color: black;
+border-bottom: 1PX solid black;
 }
-
 
 .boxes{
     display: flex;
@@ -199,7 +211,7 @@ padding: 5rem 3rem ;
     align-items: center;
     text-align: left;
     gap: 1.2rem;
-    margin: 5rem 0rem;
+    margin: 3rem 0rem;
 }
 
 .box{
@@ -229,6 +241,7 @@ padding: 5rem 3rem ;
     }
     .box{
         width: 50vw;
+        margin: 1rem 0px;
     }
     .clients{
         margin: 0px 0px;
@@ -237,12 +250,6 @@ padding: 5rem 3rem ;
         width: 30vw;
     }
 }
-
-
-/* .chooseicon{
-    text-align: left;
-    margin-left: 2vw;
-} */
 
 .sticker{
     height: 80px;
@@ -267,10 +274,8 @@ padding: 5rem 3rem ;
 
 .ourclients{
     background-color: #040504;
-    /* background-color: white; */
     color: white;
-    /* color: black; */
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
 }
 
 
@@ -385,6 +390,11 @@ padding: 5rem 3rem ;
     align-items: center;
     padding: 1rem 0rem;
     margin-top: 15vh;
+
+}
+
+.copy{
+    font-size: medium;
 }
 
 .icon{
@@ -418,6 +428,11 @@ padding: 5rem 3rem ;
 
     .navbar{
         height: 10vh;
+    }
+
+    .logo{
+        height: 10vh;
+
     }
 
     .footer{

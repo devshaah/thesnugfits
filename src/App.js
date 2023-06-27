@@ -6,7 +6,7 @@ import Products from './pages/products';
 import Contact from './pages/contact';
 import About from './pages/about';
 import Services from './pages/services';
-
+import Printing from './pages/printing';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
               <Route exact path="/contact" element={<Contact/>}/>
               <Route exact path="/about" element={<About/>}/>
               <Route exact path="/services" element={<Services/>}/>
+              <Route exact path="/printing" element={<Printing/>}/>
               </Routes>
       </Router>  
     </div>

@@ -45,24 +45,23 @@ const Navbar = () => {
         <img className="logo" src={logoname} />
       </div>
       <div className="nav-items desktop">
-        <h3 className="nav-list" onClick={() => navigate("/")}>Home</h3>
-        <h3 className="nav-list" onClick={() => navigate("/products")}>Our Products</h3>
-        <h3 className="nav-list" onClick={() => navigate("/services")}>Services</h3>
-        <h3 className="nav-list" onClick={() => navigate("/about")}>About Us</h3>
-        <h3 className="nav-list" onClick={() => navigate("/")}>Our Work</h3>
+        <h3 className="nav-list" onClick={() => navigate("/")}>HOME</h3>
+        <h3 className="nav-list" onClick={() => navigate("/products")}>PRODUCTS</h3>
+        <h3 className="nav-list" onClick={() => navigate("/services")}>SERVICES</h3>
+        <h3 className="nav-list" onClick={() => navigate("/printing")}>PRINTING</h3>
         <ScrollLink
         activeClass="active"
         spy={true}
         smooth={true}
         duration={100}
         component={RouterLink}
-        to="clients"
+        to="clie"
         className={`scroll ${ show && 'scrollc'} `}
       >
-        <h3 className="nav-list" onClick={() => navigate("/")}>Clients</h3>
+        <h3 className="nav-list" onClick={() => navigate("/")}>CLIENTS</h3>
       </ScrollLink>
-        
-        <h3 className="nav-list" onClick={() => navigate("/contact")}>Contact Us</h3>
+      <h3 className="nav-list" onClick={() => navigate("/about")}>ABOUT US</h3>       
+        <h3 className="nav-list" onClick={() => navigate("/contact")}>CONTACT US</h3>
       </div>
 
       <div className="mobile">

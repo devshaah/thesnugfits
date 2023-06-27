@@ -1,0 +1,11 @@
+.about{
+    margin-top: 18vh;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.aboutus{
+    width: 40vw;
+    margin: 1rem;
+}

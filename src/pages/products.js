@@ -17,32 +17,44 @@ import img10 from "../assets/images/crop regular.jpg";
 import img11 from "../assets/images/oversize tshirt crop.jpg";
 import img12 from "../assets/images/regular fit women.jpg";
 
+import hmen from '../assets/images/men hoodie regular.jpg'
+import hmen2 from '../assets/images/men oversize hoodie.jpg'
+import hmen3 from '../assets/images/men panel hoodie.jpg'
+import hmen4 from '../assets/images/without sleeve men.jpg'
+import hmen5 from '../assets/images/hoodie men plain.jpg'
+import hwomen from '../assets/images/women crop hoodie.jpg'
+import hwomen2 from '../assets/images/women hoodie.jpg'
+import hwomen3 from '../assets/images/women oversize hoodie.jpg'
+import hkid from '../assets/images/kids hoodie.jpg'
+import hkid2 from '../assets/images/kids oversize hoodie.jpg'
+
+import zmen from '../assets/images/men zipper regular.jpg'
+import zmen2 from '../assets/images/men oversize zipper.jpg'
+import zwomen from '../assets/images/women crop zipper.jpg'
+import zwomen2 from '../assets/images/women zipper.jpg'
+import zwomen3 from '../assets/images/women oversize zipper.jpg'
+import zkid from '../assets/images/kids zipper.jpg'
+import zkid2 from '../assets/images/kids oversize zipper.jpg'
+
+import smen from '../assets/images/sweatshirt men.jpg'
+import smen2 from '../assets/images/men oversize sweatshirt.jpg'
+import swomen2 from '../assets/images/women regular sweatshirt.jpg'
+import swomen3 from '../assets/images/women oversize sweatshirt.jpg'
+import skid from '../assets/images/kids sweatshirt.jpg'
+
 export default function SimpleAccordion() {
   const demo = [
-    {
-      category: "tshirt",
-      role: "men",
-      subcat: "oversized",
-      title: "Oversized Tshirt MEn",
-    },
-    {
-      category: "tshirt",
-      role: "women",
-      subcat: "oversized",
-      title: "Oversized Tshirt Women",
-    },
-    {
-      category: "tshirt",
-      role: "kid",
-      subcat: "oversized",
-      title: "Oversized Tshirt kid",
-    },
-    {
-      category: "tshirt",
-      role: "kid",
-      subcat: "oversized",
-      title: "Oversized Tshirt kid",
-    },
+      { title: "Oversized Tshirt", img: img6 },
+      { title: "Vest", img: img5 },     
+      { title: "Oversized Sweatshirt", img: smen2 },
+      { title: "Polo Neck", img: img7 },     
+      { title: "Oversize Zipper", img: zwomen3 },
+      { title: "Regular Fit", img: img8 },   
+      { title: "Regular Sweatshirt" , img: skid },
+      { title: "Oversized Dress", img: img9 },
+      { title: "Regular Crops", img: img10 },
+      { title: "Oversize Zipper" ,img: zkid2},
+      { title: "Oversized Crops ", img: img11 }
   ];
   const [data, setdata] = useState(demo);
 
@@ -55,7 +67,8 @@ export default function SimpleAccordion() {
         { title: "Regular Fit", img: img8 },
       ],
       women: [
-        { title: "Oversized Tshirt", img: img9 },
+        { title: "Oversized Tshirt", img: img6 },
+        { title: "Oversized Dress", img: img9 },
         { title: "Polo Neck", img: img7 },
         { title: "Regular Fit", img: img12 },
         { title: "Regular Crops", img: img10 },
@@ -69,19 +82,48 @@ export default function SimpleAccordion() {
     },
     hoodie: {
       men: [
-        { title: "Hoodie Men" },
-        { title: "Hoodie Men" },
-        { title: "Hoodie Men" },
+        { title: "Oversized Hoodie", img: hmen2 },
+        { title: "Regular Hoodie", img: hmen },
+        { title: "Plain Hoodie", img: hmen5 },
+        { title: "Panel Hoodie", img: hmen3 },
+        { title: "Sleeveless Hoodie ", img: hmen4 }
       ],
       women: [
-        { title: "Hoodie Women" },
-        { title: "Hoodie Women" },
-        { title: "Hoodie Women" },
+        { title: "Crop Hoodie", img: hwomen },
+        { title: "Oversize Hoodie", img: hwomen3 },
+        { title: "Regular Hoodie", img: hwomen2 },
       ],
       kid: [
-        { title: "Hoodie Kid" },
-        { title: "Hoodie Kid" },
-        { title: "Hoodie Kid" },
+        { title: "Regular Hoodie Kid" , img: hkid },
+        { title: "Oversize Hoodie Kid" ,img: hkid2}
+      ],
+    },
+    sweatshirt: {
+      men: [
+        { title: "Oversized Sweatshirt", img: smen2 },
+        { title: "Regular Sweatshirt", img: smen },
+      ],
+      women: [
+        { title: "Oversize Sweatshirt", img: swomen3 },
+        { title: "Regular Sweatshirt", img: swomen2 }
+      ],
+      kid: [
+        { title: "Regular Sweatshirt" , img: skid },
+      ],
+    },
+    zipper: {
+      men: [
+        { title: "Oversized Zipper", img: zmen2 },
+        { title: "Regular Zipper", img: zmen },
+      ],
+      women: [
+        { title: "Crop Zipper", img: zwomen },
+        { title: "Oversize Zipper", img: zwomen3 },
+        { title: "Regular Zipper", img: zwomen2 },
+      ],
+      kid: [
+        { title: "Regular Zipper" , img: zkid },
+        { title: "Oversize Zipper" ,img: zkid2}
       ],
     },
     corporate: {
@@ -161,6 +203,66 @@ export default function SimpleAccordion() {
               <Typography
                 className="aclist"
                 onClick={() => setdata(img.hoodie.kid)}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">Sweatshirts</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.sweatshirt.men)}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.sweatshirt.women)}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.sweatshirt.kid)}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">Zipper</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.zipper.men)}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.zipper.women)}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.zipper.kid)}
               >
                 Kids
               </Typography>
