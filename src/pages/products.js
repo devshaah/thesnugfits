@@ -1,13 +1,13 @@
 import Navbar from "../components/navbar";
 import React, { useState } from "react";
 import "./product.css";
+import bar from '../assets/arrow.png'
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Footer from "../components/footer";
-
 import img5 from "../assets/images/men vest.jpg";
 import img6 from "../assets/images/oversize tshirt.jpg";
 import img7 from "../assets/images/poloneck men.jpg";
@@ -57,8 +57,13 @@ export default function SimpleAccordion() {
       { title: "Oversized Crops ", img: img11 }
   ];
   const [data, setdata] = useState(demo);
+  const [show , setshow] = useState(false)
 
-  const img = {
+  const toggle = () =>{
+    setshow(!show)
+  }
+
+   const img = {
     tshirt: {
       men: [
         { title: "Oversized Tshirt", img: img6 },
@@ -145,17 +150,256 @@ export default function SimpleAccordion() {
   return (
     <div>
       <Navbar />
-
+      <div className="backdrop">
+        <h1 ><b>PRODUCTS</b></h1>
+      </div>
+      
       <div className="products">
-        <div className="accordion">
-          <h2 className="head">Categories</h2>
+        <div className="accordion mobile">
+          <div className="prodhead">
+          <h4 className="head"> CATEGORIES</h4>
+          <img onClick={toggle} src={bar} className="navbtn" />
+          </div>
+          {show && (<div>
+            <Accordion>
+            <AccordionSummary
+            className="accord"
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">T-SHIRTS</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.tshirt.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.tshirt.women);toggle()}}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.tshirt.kid);toggle()}}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">T-shirts</Typography>
+              <Typography className="header">HOODIES</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.hoodie.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.hoodie.women);toggle()}}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.hoodie.kid);toggle()}}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">SWEATSHIRTS</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() =>{ setdata(img.sweatshirt.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.sweatshirt.women);toggle()}}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.sweatshirt.kid);toggle()}}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">UNIFORM</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() =>{ setdata(img.zipper.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.zipper.women);toggle()}}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() =>{ setdata(img.zipper.kid);toggle()}}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">JACKETS</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() =>{ setdata(img.zipper.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.zipper.women);toggle()}}
+              >
+                Women
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() =>{ setdata(img.zipper.kid);toggle()}}
+              >
+                Kids
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">PROMOTIONAL CLOTHING</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.corporate.men);toggle()}}
+              >
+                Men
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.corporate.women);toggle()}}
+              >
+                Women
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">ACCESSORIES</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.accesories.caps);toggle()}}
+              >
+                Caps
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => {setdata(img.accesories.tote);toggle()}}
+              >
+                Tote Bags
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">CUSTOMIZATION</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.corporate.men)}
+              >
+                Prints
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.corporate.women)}
+              >
+                Embroidery
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          </div>)}
+         
+        </div>
+        <div className="accordion desktop">
+          <div className="prodhead">
+          <h4 className="head"> CATEGORIES</h4>
+          </div>
+          <div>
+            <Accordion >
+            <AccordionSummary
+            className="accord"
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">T-SHIRTS</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography
@@ -185,7 +429,7 @@ export default function SimpleAccordion() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">Hoodies</Typography>
+              <Typography className="header">HOODIES</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography
@@ -215,7 +459,7 @@ export default function SimpleAccordion() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">Sweatshirts</Typography>
+              <Typography className="header">SWEATSHIRTS</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography
@@ -245,7 +489,7 @@ export default function SimpleAccordion() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">Zipper</Typography>
+              <Typography className="header">JACKETS</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography
@@ -275,14 +519,14 @@ export default function SimpleAccordion() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">Corporate Clothing</Typography>
+              <Typography className="header">PROMOTIONAL CLOTHING</Typography>
             </AccordionSummary>
-            <AccordionDetails>
+            {/* <AccordionDetails>
               <Typography
                 className="aclist"
                 onClick={() => setdata(img.corporate.men)}
               >
-                Men
+                
               </Typography>
               <Typography
                 className="aclist"
@@ -290,8 +534,9 @@ export default function SimpleAccordion() {
               >
                 Women
               </Typography>
-            </AccordionDetails>
+            </AccordionDetails> */}
           </Accordion>
+
 
           <Accordion>
             <AccordionSummary
@@ -299,31 +544,7 @@ export default function SimpleAccordion() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="header">Uniform</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography
-                className="aclist"
-                onClick={() => setdata(img.uniform.girl)}
-              >
-                Girl
-              </Typography>
-              <Typography
-                className="aclist"
-                onClick={() => setdata(img.uniform.boy)}
-              >
-                Boy
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className="header">Accessories</Typography>
+              <Typography className="header">ACCESSORIES</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography
@@ -340,7 +561,35 @@ export default function SimpleAccordion() {
               </Typography>
             </AccordionDetails>
           </Accordion>
+
+          
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="header">CUSTOMIZATION</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.corporate.men)}
+              >
+                Prints
+              </Typography>
+              <Typography
+                className="aclist"
+                onClick={() => setdata(img.corporate.women)}
+              >
+                Embroidery
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          </div>
+         
         </div>
+        
         <div className="displaybox">
           {data.map((item) => {
             return (

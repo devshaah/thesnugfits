@@ -1,11 +1,60 @@
 .about{
-    margin-top: 18vh;
+    padding: 1rem;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 5vw;
     text-align: left;
 }
 
 .aboutus{
     width: 40vw;
-    margin: 1rem;
 }
+
+.aboutus ul{
+    list-style-type:disc;
+}
+.aboutus ul li{
+   margin: 10px 5px;
+   font-size: large;
+}
+
+.aboutimg{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.about-box-img{
+    width: 23vw;
+    height: 28vh;
+}
+
+
+@media screen and (max-width: 480px){
+
+    .desktop{
+        display: none;
+    }
+
+    .about-box{
+        width: 100vw;
+        padding: 1rem;
+        justify-content: center;
+
+    }
+
+.about-box-img{
+    width: 80vw;
+}
+
+.mobile li{
+    list-style: none;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    width: 95vw;
+}
+    
+}
+

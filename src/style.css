@@ -7,7 +7,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h5,p{
-    margin: 0.5rem;
+    margin: 0.4rem;
 }
 
 
@@ -29,25 +29,45 @@ h1,h2,h3,h4,h5,h5,p{
     top: 0;
     width: 100vw;
     z-index: 10;
-    margin-bottom: 3vh;
+    /* padding-right: 1rem; */
+    /* margin-bottom: 3vh; */
 }
 
-/* .nav_black{
-    background-color: black;
+.backdrop{
+    background-image: url(./assets/bannerr.png);
+    margin-top: 17vh;
+    height: 20vh;
     color: white;
-} */
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .logo{
     height: 13vh;
-    /* margin-left: 1.5rem; */
 }
 
 .nav-items{
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-    margin-right: 2rem ;
+    padding-right: 2rem ;
+}
 
+.navmob{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: black;
+    transition: left 2s ease-in-out;
+    border-top: 1px solid rgb(157, 157, 157);
+}
+
+.listmob{
+    padding: 0.7rem 0px;
 }
 
 .scroll{
@@ -56,8 +76,8 @@ h1,h2,h3,h4,h5,h5,p{
     font-size: inherit;
 }
 
-
 .nav-list{
+    list-style-type: none;
     cursor: pointer;
     font-size: medium;
     text-decoration: none;
@@ -66,7 +86,35 @@ h1,h2,h3,h4,h5,h5,p{
 .nav-list:hover{
     cursor: pointer;
     transform: scale(1.1);
+    color: rgb(126, 126, 126);
 }
+
+.navbtn{
+    width: 30px;
+    height: 30px;
+    margin-right: 1rem;
+}
+
+
+@media screen and (max-width: 480px) {
+    .backdrop{
+        margin-top: 9vh;
+        height: 15vh;
+    }
+    .nav{
+        height: 10vh;
+        justify-content: space-between;
+    }
+    .backdrop-head{
+        margin-top: 12.5vh;
+    }
+    .logo{
+        height: 9vh;  
+    }
+}
+
+
+
 
 /* BANNER    */
 .banner{
@@ -80,7 +128,8 @@ h1,h2,h3,h4,h5,h5,p{
 /* How it Works  */
 
 .howwework{
-    background-color: rgb(0, 0, 0);
+    background: url(./assets/images.jpeg);
+    /* background-size: cover; */
     color: rgb(255, 255, 255);
     padding: 1rem;
 }
@@ -89,10 +138,18 @@ h1,h2,h3,h4,h5,h5,p{
     text-align: start;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
     padding: 1rem 2rem 3rem 2rem;
     gap: 2rem;
     
 }
+
+
+.header{
+    text-align: center;
+}
+
 
 .workcard{
     /* border: 1px solid white; */
@@ -137,39 +194,6 @@ h1,h2,h3,h4,h5,h5,p{
     transition: ease-in 0.1s;
 }
 
-                                    /* PROCESS */
-.process{
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* text-align: left; */
-    align-items: center;
-}
-
-.processbox{
-    width:350px;
-    margin: 1rem;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.processimg{
-    width: 350px;
-    height: 200px;
-}
-
-.processbox:hover{
-    transform: scale(1.1);
-}
-
-
-.processhead{
-    padding-top: 40px;
-}
-
 /* SERVICES */
 
 .services{
@@ -198,7 +222,7 @@ h1,h2,h3,h4,h5,h5,p{
 /* WHY CHOOSE US  */
 .whychooseus{
 background-color: white;
-padding: 1rem 2rem 2rem;
+padding: 3rem 2rem;
 color: black;
 border-bottom: 1PX solid black;
 }
@@ -232,22 +256,29 @@ border-bottom: 1PX solid black;
 
 @media screen and (max-width: 480px){
     .whychooseus{
-        padding: 1rem;
+        padding: 0.5rem;
     }
     .boxes{
-        margin: 1rem;
-        gap: 0px;
+        gap: 1rem;
         flex-direction: row;
     }
+    .asd{
+        width: 44vw;
+    }
     .box{
-        width: 50vw;
-        margin: 1rem 0px;
+        width: 40vw;
+        height: 26vh;
+        margin: 1rem;
+        padding: 0.5rem;
     }
     .clients{
         margin: 0px 0px;
     }
     .client{
         width: 30vw;
+    }
+    .work{
+        align-items: center;
     }
 }
 
@@ -300,6 +331,8 @@ border-bottom: 1PX solid black;
 .testimonials{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-top: 2rem;
 }
 
@@ -308,13 +341,26 @@ border-bottom: 1PX solid black;
     width: 450px;
 }
 
+@media screen and (max-width: 480px){
+    .review{
+        width: 300px;
+    }
+
+}
+
+/* 
 .testimonial{
     width: 30vw;
     margin: 1rem;
-}
+} */
 
 
 /* CONTACT */
+
+.contactpage{
+    margin-top: 37vh;
+}
+
 
 .contact{
     display: flex;
@@ -389,7 +435,7 @@ border-bottom: 1PX solid black;
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 0rem;
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
 
 }
 
@@ -410,10 +456,6 @@ border-bottom: 1PX solid black;
         gap: 3rem;
     }
 
-    .logoname{
-        display: none;
-    }
-
     .workcard{
         width: 90%;
     }
@@ -425,16 +467,6 @@ border-bottom: 1PX solid black;
     .banner{
         height: 90vh;
     }
-
-    .navbar{
-        height: 10vh;
-    }
-
-    .logo{
-        height: 10vh;
-
-    }
-
     .footer{
         flex-direction: column;
     }

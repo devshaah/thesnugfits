@@ -63,6 +63,9 @@ const Contact = () => {
   return (
     <div>
       <Navbar />
+      <div className="backdrop">
+        <h1 ><b>CONTACT US</b></h1>
+      </div>
       <div className="contact">
         <div className="map">
           <GoogleMapReact

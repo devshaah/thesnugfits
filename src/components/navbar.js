@@ -3,43 +3,21 @@ import logoname from "../assets/logoname.jpg";
 import { useNavigate,  Link as RouterLink } from "react-router-dom";
 import "../style.css";
 import React, { useState,useEffect } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { Link as ScrollLink } from "react-scroll";
-
+import bar from '../assets/BARS.png'
 
 
 const Navbar = () => {
   const navigate = useNavigate();
-    const [anchorEl, setAnchorEl] = useState(null);
-  
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+  const [toggleMenu, setToggleMenu] = useState(false)
 
-    const [show,handleshow] = useState(false);
-    const [scrollc,handlescrollc] = useState(false);
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu)
+  }
 
-    const transitionNavbar = ()=>{
-        if(window.scrollY > 100)
-        {
-            handleshow(true)
-        }
-        else handleshow(false)
-    }
-    useEffect(()=>{
-        window.addEventListener("scroll",transitionNavbar);
-        return ()=>window.removeEventListener("scroll",transitionNavbar)
-    },[])
-  
   return (
-    <div className={`nav ${ show && 'nav_black'} `}>
+    <div>
+    <div className="nav desktop">
       <div  onClick={() => navigate("/")}>
         <img className="logo" src={logo} />
         <img className="logo" src={logoname} />
@@ -49,55 +27,30 @@ const Navbar = () => {
         <h3 className="nav-list" onClick={() => navigate("/products")}>PRODUCTS</h3>
         <h3 className="nav-list" onClick={() => navigate("/services")}>SERVICES</h3>
         <h3 className="nav-list" onClick={() => navigate("/printing")}>PRINTING</h3>
-        <ScrollLink
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        duration={100}
-        component={RouterLink}
-        to="clie"
-        className={`scroll ${ show && 'scrollc'} `}
-      >
-        <h3 className="nav-list" onClick={() => navigate("/")}>CLIENTS</h3>
-      </ScrollLink>
-      <h3 className="nav-list" onClick={() => navigate("/about")}>ABOUT US</h3>       
+        <h3 className="nav-list" onClick={() => navigate("/clients")}>CLIENTS</h3>
+        <h3 className="nav-list" onClick={() => navigate("/about")}>ABOUT US</h3>       
         <h3 className="nav-list" onClick={() => navigate("/contact")}>CONTACT US</h3>
       </div>
+      </div>
+      <div className="nav mobile">
+      <img className="logo" src={logoname} />
+      <img className="logo" src={logo} />
+      <img src={bar} onClick={toggleNav} className="navbtn"/>
+      {(toggleMenu && (    
+      <div className="navmob">   
+        <ul>
+        <li className="nav-list listmob" onClick={() => navigate("/products")}>PRODUCTS</li>
+        <li className="nav-list listmob" onClick={() => navigate("/services")}>SERVICES</li>
+        <li className="nav-list listmob" onClick={() => navigate("/printing")}>PRINTING</li>
+        <li className="nav-list listmob" onClick={() => navigate("/clients")}>CLIENTS</li>
+        <li className="nav-list listmob" onClick={() => navigate("/about")}>ABOUT US</li>
+        <li className="nav-list listmob" onClick={() => navigate("/contact")}>CONTACT</li>
+        <li className="nav-list listmob" onClick={() => navigate("/")}>HOME</li>
+        </ul> 
+        </div>)
+      )}
 
-      <div className="mobile">
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          onClick={handleClick}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-        <MenuItem className="nav-list" onClick={() => navigate("/products")}>Our Products</MenuItem>
-        <MenuItem className="nav-list" onClick={() => navigate("/services")}>Services</MenuItem>
-        <MenuItem className="nav-list" onClick={() => navigate("/about")}>About Us</MenuItem>
-        <MenuItem className="nav-list" onClick={() => navigate("/")}>Our Work</MenuItem>
-        <ScrollLink
-        activeClass="active"
-        spy={true}
-        smooth={true}
-        duration={100}
-        component={RouterLink}
-        to="clients"
-        className="scroll"
-      >
-        <h3 className="nav-list" onClick={() => navigate("/")}>Clients</h3>
-      </ScrollLink>
-        <MenuItem className="nav-list" onClick={() => navigate("/about")}>About Us</MenuItem>
-        <MenuItem className="nav-list" onClick={() => navigate("/contact")}>Contact Us</MenuItem>
-        <MenuItem className="nav-list" onClick={() => navigate("/")}>Home</MenuItem>
-        </Menu>
+
       </div>
     </div>
   );

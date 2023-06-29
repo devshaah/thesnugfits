@@ -45,6 +45,9 @@ const services = () => {
   return (
     <div>
       <Navbar/>
+      <div className="backdrop">
+        <h1 ><b>SERVICES</b></h1>
+      </div>
       <div className='services'>
       {
         images.map((item)=>{

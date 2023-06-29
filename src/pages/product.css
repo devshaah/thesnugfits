@@ -1,11 +1,29 @@
+body{
+    overflow-x: hidden;
+}
 .products{
     background-color: white;
     display: flex;
     flex-direction: row;
-    margin-top: 20vh;
-    margin-left: 5vw;
-    gap: 5vh;
+    margin-top: 1vh;
+    margin-left: 3vw;
+    gap: 10vh;
+    padding-top: 2vh;
 }
+
+.prodhead{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    /* border-radius: 5px 5px 0px 0px; */
+    padding: 0.6rem;
+    padding-left: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
 
 .head{
     margin: 1vh;
@@ -55,24 +73,56 @@
 @media screen and (max-width: 480px){
 
     .products{
-        display: flex;
         flex-direction: column;
+        gap: 5vh;
+        margin-left: 0px;
+        /* margin-top: 20vh; */
+        /* padding-top: 24vh; */
+    }
+
+    .displaybox{
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        width: 100%;
+    }
+
+    .productbox{
+        width: 50vw;
+        padding: 0px;
+    }
+
+    .productimg{
+        width: 40vw;
+    }
+
+
+/* 
+    .products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        gap: 3vw;
     }
     .accordion{
         text-align: start;
         width: 80%;
     }
+    .productbox{
+        width: 40vw;
+    }
 
     .productimg{
-        width: 80vw;
+        width: 40vw;
     }
 
     .displaybox{
         flex-direction: column;
-        width: 90vw;
-    }
+        width: 40vw;
+    } */
 
 
 }
@@ -80,7 +130,7 @@
 @media screen and (min-width: 480px){
 
     .accordion{
-        width: 30%;
+        width: 25%;
         text-align: start;
     }
 }

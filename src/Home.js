@@ -22,11 +22,6 @@ import handcrafted from './assets/sticker/handcrafted.png'
 import inhouse from './assets/sticker/inhouse cut to pack.png'
 import delivery from './assets/sticker/delivery (1).png'
 
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import WarehouseIcon from '@mui/icons-material/Warehouse';
-import AddTaskIcon from '@mui/icons-material/AddTask';
-
 import review1 from './assets/reviews/review 1.png'
 import review2 from './assets/reviews/review 2.png'
 import review3 from './assets/reviews/review 3.png'
@@ -65,35 +60,49 @@ const Home = () => {
             <p>Let's get started</p>
         <div className='work'>
             <div className='workcard '>
-            <h2>Design</h2>
-            <ul>
-                <li>If you already possess a logo, we can convert it into a digital format for you.</li>
-                <li>In case you don't have a logo, we can assist you in creating a unique design.</li>
+            <h2 className='header'>DESIGN</h2>
+            <ul className='desktop'>
+                <li>We can assist you in creating a unique design or we can convert your logo into a digital format for you.</li>
                 <li>Our services offer flexibility in terms of size and color options for your logo.</li>
                 <li>You can choose to have your design embroidered or applied using heat transfer methods.</li>
                 <li>To gather inspiration, feel free to explore our gallery or check our social media feeds.</li>
             </ul>
+            <ul className='mobile'>
+                <li>Create / Modify Logos</li>
+                <li>Flexibility in Size & colours</li>
+                <li>Using Embroidery / Heat Transfer Method</li>
+                <li>Explore our Social Media</li>
+            </ul>
             </div>
  
             <div className='workcard'>
-            <h2>Clothing</h2>
-            <ul>
+            <h2 className='header'>CLOTHING</h2>
+            <ul className='desktop'>
                 <li>We have an extensive range of brands with a wide variety of designs and colors available.</li>
                 <li>Our services include embroidery and heat transfer, allowing us to customize apparel items, blankets, towels, backpacks, and more</li>
                 <li>To help you find exactly what you're looking for, we encourage you to explore our catalogs.</li>
                 <li>If you can't find the specific item you need, please let us know, and we'll be happy to assist you in finding it.</li>
-                <li>Additionally, we offer the option to apply your logo or design to an item you provide (with certain restrictions in place)</li>
+            </ul>
+            <ul className='mobile'>
+                <li>Extensive Range</li>
+                <li>Customized Apparels</li>
+                <li>Catalogues for reference</li>
             </ul>
             </div>
 
             <div className='workcard'>
-            <h2>Orders</h2>
-            <ul>
+            <h2 className='header'>ORDERS</h2>
+            <ul className='desktop'>
                 <li>If you have any inquiries and are not yet ready to proceed, feel free to reach out to us via phone, chat, or email, and we'll be glad to assist you.</li>
-                <li>We welcome you to visit our location for a no-cost consultation. Here, you'll have the opportunity to examine and experience samples of our most popular items and designs firsthand.</li>
-                <li>Once you've placed your order, we'll promptly send you an example via email or text for your approval before proceeding with processing. </li>
+                <li>You'll have the opportunity to examine and experience samples of our most popular items and designs firsthand.</li>
                 <li>The completion time for orders may range from a few days to two weeks, depending on the order size.</li>
                 <li>No order is considered too small or too large for us to handle. We offer multiple payment options, including cash, checks, credit cards, and PayPal, to accommodate your preferences</li>
+            </ul>
+            <ul className='mobile'>
+                <li>Experience our Product</li>
+                <li>Completion Time : Few Days - 2 weeks</li>
+                <li>Multiple payment options.</li>
+                <li>Feel free to reach out to us.</li>
             </ul>
             </div>
 
@@ -159,21 +168,9 @@ const Home = () => {
     <div className='testimons'>
         <h1 className='header'>HEAR FROM OUR CUSTOMERS</h1>
         <div className='testimonials'>
-        <div className='testimonial'> 
-        {/* <h4>High-Quality Clothing</h4> */}
-         {/* <p className='review'>I've been a customer of TheSnugFits for a while now, and I must say their clothing is top-notch. The materials used are of excellent quality, and the stitching is always neat and durable. I love how their clothes fit me perfectly and make me feel confident. Keep up the great work!</p> */}
          <img className='review' src={review1}/>
-        </div>
-        <div className='testimonial'> 
-        {/* <h4>Fast and Efficient Service</h4>
-         <p className='review'>I recently ordered a few outfits from TheSnugFits, and I was impressed by their speedy and efficient service. The order was processed quickly, and the items arrived well-packaged and in excellent condition. The company's attention to detail and prompt communication made the whole shopping experience hassle-free. I would definitely recommend them.</p> */}
          <img className='review' src={review2}/>
-        </div>
-        <div  className='testimonial'> 
-        {/* <h4>Stylish and Trendy Designs</h4>
-         <p className='review'>TheSnugFits truly stands out when it comes to their fashionable and trendy designs. Every time I wear their clothes, I receive compliments and inquiries about where I got them. The company seems to have its finger on the pulse of the latest fashion trends. Their unique and stylish pieces allow me to express my personal style with confidence. I'm a loyal customer and always look forward to their new collections.</p> */}
          <img className='review' src={review3}/>
-        </div>
         </div>
 
     </div>

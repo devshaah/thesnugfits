@@ -1,0 +1,92 @@
+/* PROCESS */
+body{
+    font-family: 'Monsterat', sans-serif;
+}
+.process {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* text-align: left; */
+  align-items: center;
+}
+
+.processbox {
+  width: 350px;
+  margin: 1rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.processimg {
+  width: 350px;
+  height: 200px;
+}
+
+.processbox:hover {
+  transform: scale(1.1);
+}
+
+.processhead {
+  padding-top: 40px;
+}
+.pro-mobil{
+    display: none;
+}
+
+
+@media screen and (max-width: 480px){
+    .desktop{
+        display: none;
+    }
+
+    .product-carousel{
+        /* padding: 0.5rem; */
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    .product-container{
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    .probox-mob{
+        width: 100vw;
+        margin: 1rem;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    }
+
+    .proimg-mob{
+        width: 90vw;
+        height: 30vh;
+    }
+
+    .nextbtn , .prevbtn{
+        position: absolute;
+        height: 40%;
+        border: none;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0);
+        font-size: xx-large;
+    }
+
+    .nextbtn{
+        right: 0;;
+    }
+
+    .prevbtn{
+        left: 0;
+    }
+}
+@media screen and (min-width: 480px){
+    .process-mobile{
+        display: none;
+    }
+}
+

@@ -7,7 +7,7 @@ import Contact from './pages/contact';
 import About from './pages/about';
 import Services from './pages/services';
 import Printing from './pages/printing';
-
+import Clients from './pages/clients';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
               <Route exact path="/about" element={<About/>}/>
               <Route exact path="/services" element={<Services/>}/>
               <Route exact path="/printing" element={<Printing/>}/>
+              <Route exact path="/clients" element={<Clients/>}/>
               </Routes>
       </Router>  
     </div>
