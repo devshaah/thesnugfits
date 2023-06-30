@@ -67,12 +67,12 @@ const Home = () => {
                 <li>You can choose to have your design embroidered or applied using heat transfer methods.</li>
                 <li>To gather inspiration, feel free to explore our gallery or check our social media feeds.</li>
             </ul>
-            <ul className='mobile'>
-                <li>Create / Modify Logos</li>
-                <li>Flexibility in Size & colours</li>
-                <li>Using Embroidery / Heat Transfer Method</li>
-                <li>Explore our Social Media</li>
-            </ul>
+            <div className='mobile'>
+                <p>Create / Modify Logos</p>
+                <p>Flexibility in Size & colours</p>
+                <p>Using Heat Transfer Method</p>
+                <p>Explore our Social Media</p>
+            </div>
             </div>
  
             <div className='workcard'>
@@ -83,11 +83,11 @@ const Home = () => {
                 <li>To help you find exactly what you're looking for, we encourage you to explore our catalogs.</li>
                 <li>If you can't find the specific item you need, please let us know, and we'll be happy to assist you in finding it.</li>
             </ul>
-            <ul className='mobile'>
-                <li>Extensive Range</li>
-                <li>Customized Apparels</li>
-                <li>Catalogues for reference</li>
-            </ul>
+            <div className='mobile'>
+                <p>Extensive Range</p>
+                <p>Customized Apparels</p>
+                <p>Catalogues for reference</p>
+            </div>
             </div>
 
             <div className='workcard'>
@@ -98,12 +98,12 @@ const Home = () => {
                 <li>The completion time for orders may range from a few days to two weeks, depending on the order size.</li>
                 <li>No order is considered too small or too large for us to handle. We offer multiple payment options, including cash, checks, credit cards, and PayPal, to accommodate your preferences</li>
             </ul>
-            <ul className='mobile'>
-                <li>Experience our Product</li>
-                <li>Completion Time : Few Days - 2 weeks</li>
-                <li>Multiple payment options.</li>
-                <li>Feel free to reach out to us.</li>
-            </ul>
+            <div className='mobile'>
+                <p>Sampling Available</p>
+                <p>Completion Time: 2-14 days.</p>
+                <p>Multiple payment options.</p>
+                <p>Feel free to reach out to us.</p>
+            </div>
             </div>
 
 
@@ -149,7 +149,6 @@ const Home = () => {
         </div>
 
     </div>
-        <Process/>
     <div id='clie' className='ourclients'>
         <h1 className='header' >OUR CLIENTS</h1>
         <div className='clients'> 
@@ -161,9 +160,11 @@ const Home = () => {
         <img src={koverify} className='client'/>
         </div>
         <h4>Want to be our Client?</h4>
-        <button onClick={()=>navigate("/contact")} className='contactbtn'>Contact Us</button>
+        <button onClick={()=>navigate("/contact")} className='contactbtn clientbtn'>Contact Us</button>
 
     </div>
+        <Process/>
+
 
     <div className='testimons'>
         <h1 className='header'>HEAR FROM OUR CUSTOMERS</h1>

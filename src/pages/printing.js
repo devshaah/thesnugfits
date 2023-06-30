@@ -24,14 +24,14 @@ const Printing = () => {
             <div className='printing-info'>
               <h1>DTF PRINTING</h1>
               <p>
-DTF printing is a method of direct-to-film printing that allows for high-quality and vibrant prints on various materials. It involves printing designs directly onto a film, which is then transferred onto the desired surface using heat and pressure. DTF printing offers versatility and durability, making it suitable for apparel, fabrics, and other items.</p>
+DTF printing is a method of direct-to-film printing that allows for high-quality and vibrant prints on fabrics. It involves printing designs directly onto a film, which is then transferred onto the desired fabric using heat and pressure. DTF printing offers versatility and durability, making it suitable for apparel, fabrics, and other items.</p>
             </div>
         </div>
         <div className='printing-box rev'>
             <div className='printing-info'>
               <h1>REFLECTIVE PRINT</h1>
               <p>
-Refractive printing is a specialized printing technique that uses reflective materials to create eye-catching and dynamic designs. The process involves printing designs onto a surface that contains tiny reflective particles or layers. When light hits the printed design, it bounces off the reflective elements, creating a visually striking and reflective effect. Refractive printing is often used to enhance visibility, add a futuristic touch, or create unique patterns on various products, including apparel, accessories, and promotional items.</p>
+Refractive printing is a specialized printing technique that uses reflective materials to create eye-catching and dynamic designs. The process involves printing designs onto a surface that contains tiny reflective particles or layers. When light hits the printed design, it bounces off the reflective elements, creating a visually striking and reflective effect. Refractive printing is often used to enhance visibility, add a futuristic touch, or create unique patterns on clothes.</p>
             </div>
 <img src={reflective} className='printing-img'/>
         </div>
@@ -39,7 +39,7 @@ Refractive printing is a specialized printing technique that uses reflective mat
             <img src={screen} className='printing-img'/>
             <div className='printing-info'>
               <h1>SCREEN PRINTING</h1>
-              <p>Screen printing is a versatile and widely used printing method that involves applying ink onto a surface through a mesh screen. It allows for vibrant and detailed prints on various materials, including textiles, paper, plastics, and more. The process utilizes a stencil to control the ink placement, and a squeegee is used to push the ink through the screen onto the surface. Screen printing is valued for its durability, versatility, and the ability to reproduce intricate designs with precision.</p>
+              <p>Screen printing is a versatile and widely used printing method that involves applying ink onto a fabric through a mesh screen. The process utilizes a stencil to control the ink placement, and a squeegee is used to push the ink through the screen onto the fabric. Screen printing is valued for its durability, versatility, and the ability to reproduce intricate designs with precision.</p>
             </div>
         </div>
 
@@ -64,7 +64,7 @@ Embroidery is a decorative technique that involves stitching designs onto fabric
             <div className='printing-info'>
               <h1>GOLD PRINTING</h1>
               <p>
-Gold printing is a specialized printing technique that involves using gold ink or foil to create metallic and luxurious designs. The process typically involves applying gold ink or foil onto a surface using heat and pressure. This technique is commonly used for creating elegant and eye-catching designs on various materials, such as paper, cards, packaging, and promotional items. Gold printing adds a touch of sophistication and luxury to printed products, making them stand out and catch attention.</p>
+Gold printing is a specialized printing technique that involves using gold ink or foil to create metallic and luxurious designs. The process typically involves applying gold ink or foil onto fabric using heat and pressure.  Gold printing adds a touch of sophistication and luxury to printed products, making them stand out and catch attention.</p>
             </div>
 <img src={gold} className='printing-img'/>
         </div>
@@ -73,7 +73,7 @@ Gold printing is a specialized printing technique that involves using gold ink o
             <div className='printing-info'>
               <h1>SUBLIMATION PRINTING</h1>
               <p>
-              Sublimation printing is a method that uses heat to transfer dye onto various materials, such as fabric, ceramics, or metals. The process involves printing the design onto a special sublimation paper using sublimation inks. When heat is applied, the ink turns into a gas and penetrates the material's surface, resulting in vibrant and long-lasting prints. Sublimation printing offers excellent color reproduction, durability, and the ability to print intricate details. It is commonly used for custom apparel, personalized gifts, and promotional items.</p>
+              Sublimation printing is a method that uses heat to transfer dye onto fabrics. The process involves printing the design onto a special sublimation paper using sublimation inks. When heat is applied, the ink turns into a gas and penetrates the material's surface, resulting in vibrant and long-lasting prints. Sublimation printing offers excellent color reproduction, durability, and the ability to print intricate details. It is commonly used for custom apparel, personalized gifts, and promotional items.</p>
             </div>
         </div>
 

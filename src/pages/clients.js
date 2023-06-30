@@ -29,7 +29,7 @@ const Clients = () => {
         <img src={koverify} className='client'/>
         </div>
         <h4>Want to be our Client?</h4>
-        <button onClick={()=>navigate("/contact")} className='contactbtn'>Contact Us</button>
+        <button onClick={()=>navigate("/contact")} className='contactbtn clientbtn'>Contact Us</button>
 
     </div>
     </div>

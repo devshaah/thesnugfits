@@ -38,15 +38,13 @@ const Navbar = () => {
       <img src={bar} onClick={toggleNav} className="navbtn"/>
       {(toggleMenu && (    
       <div className="navmob">   
-        <ul>
-        <li className="nav-list listmob" onClick={() => navigate("/products")}>PRODUCTS</li>
-        <li className="nav-list listmob" onClick={() => navigate("/services")}>SERVICES</li>
-        <li className="nav-list listmob" onClick={() => navigate("/printing")}>PRINTING</li>
-        <li className="nav-list listmob" onClick={() => navigate("/clients")}>CLIENTS</li>
-        <li className="nav-list listmob" onClick={() => navigate("/about")}>ABOUT US</li>
-        <li className="nav-list listmob" onClick={() => navigate("/contact")}>CONTACT</li>
-        <li className="nav-list listmob" onClick={() => navigate("/")}>HOME</li>
-        </ul> 
+        <h4 className="nav-list listmob" onClick={() => navigate("/products")}>PRODUCTS</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/services")}>SERVICES</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/printing")}>PRINTING</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/clients")}>CLIENTS</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/about")}>ABOUT US</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/contact")}>CONTACT</h4>
+        <h4 className="nav-list listmob" onClick={() => navigate("/")}>HOME</h4>
         </div>)
       )}
 

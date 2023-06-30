@@ -3,6 +3,7 @@ import '../style.css'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import GmailIcon from '@mui/icons-material/Email';
 
 
 const footer = () => {
@@ -14,7 +15,8 @@ const footer = () => {
       <div>
         <a href='https://instagram.com/thesnugstitch?igshid=MzRlODBiNWFlZA==' className='icon'><InstagramIcon/></a>
         <a href='' className='icon'><FacebookIcon/></a>
-        <a href='' className='icon'><TwitterIcon/></a>   
+        <a href='' className='icon'><TwitterIcon/></a>
+        <a href='mailto:thesnugstitch@gmail.com' className='icon'><GmailIcon/></a>   
       </div>
     </div>
   )
