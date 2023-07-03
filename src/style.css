@@ -111,7 +111,7 @@ h1,h2,h3,h4,h5,h5,p{
         margin-top: 12.5vh;
     }
     .logo{
-        height: 9vh;  
+        height: 6vh;  
     }
 }
 
@@ -220,6 +220,18 @@ h1,h2,h3,h4,h5,h5,p{
     transform: scale(1.1);  
 }
 
+.serviceimg{
+    height: 35vh;
+    width: 25vw;
+    border-radius: 20px;
+}
+@media screen and (max-width: 480px){
+    .serviceimg{
+        width: 80vw;
+        height: 25vh;
+    }
+}
+
 
 /* WHY CHOOSE US  */
 .whychooseus{
@@ -316,6 +328,7 @@ border-bottom: 1PX solid black;
     height: 15vh;
     margin: 1rem;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .client:hover{
@@ -325,6 +338,40 @@ border-bottom: 1PX solid black;
 .clientbtn{
     margin-top: 1rem;
 }
+
+
+/* AS SEEN ON  */
+
+.as-seen-on{
+    margin: 2rem 0px;
+}
+
+.seenimg{
+    width: 28vw;
+    height: 35vh;
+}
+
+.seenon{
+    margin-left: 1rem;
+    /* width: 80vw; */
+}
+
+@media screen and (max-width: 480px){
+    .as-seen-on{
+        overflow-x: hidden;
+    }
+    .seenon{
+        width: 80vw;
+
+    }
+
+    .seenimg{
+        width: 78vw;
+        height: 28vh;
+        margin-left: 10vw;
+    }
+}
+
 
 /* TESTIMONIALS */
 

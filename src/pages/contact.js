@@ -181,7 +181,7 @@ const Contact = ({ messageinput }) => {
             Call us at : <b>+91 98203 32671</b>
           </h4>
           <h4>
-            Email us at : <b>thesnugstitch@gmail.com</b>
+            Email us at : <b>thesnugstitches@gmail.com</b>
           </h4>
         </div>
         <div className="address">
@@ -198,7 +198,7 @@ const Contact = ({ messageinput }) => {
             >
               <InstagramIcon style={{ fontSize: "3rem" }} />
             </a>
-            <a href="mailto:thesnugstitch@gmail.com" className="social-icon">
+            <a href="mailto:thesnugstitches@gmail.com" className="social-icon">
               <GmailIcon style={{ fontSize: "3rem" }} />
             </a>
             <a href="" className="social-icon">

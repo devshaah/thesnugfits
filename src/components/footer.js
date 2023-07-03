@@ -16,7 +16,7 @@ const footer = () => {
         <a href='https://instagram.com/thesnugstitch?igshid=MzRlODBiNWFlZA==' className='icon'><InstagramIcon/></a>
         <a href='' className='icon'><FacebookIcon/></a>
         <a href='' className='icon'><TwitterIcon/></a>
-        <a href='mailto:thesnugstitch@gmail.com' className='icon'><GmailIcon/></a>   
+        <a href='mailto:thesnugstitches@gmail.com' className='icon'><GmailIcon/></a>   
       </div>
     </div>
   )

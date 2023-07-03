@@ -67,22 +67,7 @@ body{
         height: 30vh;
     }
 
-    .nextbtn , .prevbtn{
-        position: absolute;
-        height: 40%;
-        border: none;
-        outline: none;
-        background-color: rgba(255, 255, 255, 0);
-        font-size: xx-large;
-    }
 
-    .nextbtn{
-        right: 0;;
-    }
-
-    .prevbtn{
-        left: 0;
-    }
 }
 @media screen and (min-width: 480px){
     .process-mobile{

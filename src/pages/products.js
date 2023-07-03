@@ -647,8 +647,14 @@ const Products = ({ setmessage }) => {
             </Accordion>
           </div>
         </div>
+<div>
 
-        <div className="displaybox">
+          <ul className="product-li">
+            <li >All types of Customization done.</li>
+            <li>All Colours Available.</li>
+            <li>All Sizes Available.</li>
+          </ul>
+          <div className="displaybox">
           {data.map((item) => {
             return (
               <div>
@@ -668,6 +674,7 @@ const Products = ({ setmessage }) => {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
       <Footer />

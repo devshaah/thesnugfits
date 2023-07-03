@@ -19,8 +19,8 @@ const Navbar = () => {
     <div>
     <div className="nav desktop">
       <div  onClick={() => navigate("/")}>
-        <img className="logo" src={logo} />
-        <img className="logo" src={logoname} />
+        <img className="logo" src={logo} onClick={() => navigate("/")}/>
+        <img className="logo" src={logoname} onClick={() => navigate("/")}/>
       </div>
       <div className="nav-items desktop">
         <h3 className="nav-list" onClick={() => navigate("/")}>HOME</h3>
@@ -33,8 +33,8 @@ const Navbar = () => {
       </div>
       </div>
       <div className="nav mobile">
-      <img className="logo" src={logoname} />
-      <img className="logo" src={logo} />
+      <img className="logo" src={logoname} onClick={() => navigate("/")}/>
+      <img className="logo" src={logo} onClick={() => navigate("/")}/>
       <img src={bar} onClick={toggleNav} className="navbtn"/>
       {(toggleMenu && (    
       <div className="navmob">   

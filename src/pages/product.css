@@ -24,6 +24,14 @@ body{
     flex-direction: row;
 }
 
+.product-li{
+    text-align: start;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 5vw;
+    margin-left: 3vw;
+}
 
 .head{
     margin: 1vh;
@@ -81,7 +89,11 @@ body{
 }
 
 @media screen and (max-width: 480px){
-
+    .product-li{
+        flex-direction: column;
+        align-items: start;
+        gap: 0px;
+    }
     .products{
         flex-direction: column;
         gap: 5vh;
