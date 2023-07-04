@@ -651,7 +651,7 @@ const Products = ({ setmessage }) => {
 
           <ul className="product-li">
             <li >All types of Customization done.</li>
-            <li>All Colours Available.</li>
+            <li>Colours Options Available.</li>
             <li>All Sizes Available.</li>
           </ul>
           <div className="displaybox">

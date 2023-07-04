@@ -4,7 +4,11 @@ import './style.css'
 import Navbar from './components/navbar';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import banner1 from './assets/banner1.png'
+import Slider from "react-slick";
+
+// import banner1 from './assets/banner1.png'
+import banner1 from './assets/banner1.jpg'
+
 import banner2 from './assets/Untitled.png'
 import Services from './pages/services'
 import Footer from './components/footer';
@@ -30,29 +34,78 @@ const Home = () => {
 
     const navigate = useNavigate()
 
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 500, // Adjust the breakpoint value as needed
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: true, // Optionally hide the arrows on mobile
+            },
+          },
+        ],
+      };
+
   return (
     <div>
       <Navbar/>
 
     <div className='desktop'>
-        <Carousel controls autoPlay interval={2000} >
+        <Slider {...settings}>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+            <div className='slide'>
+            <img src={banner1} className='banner'/>
+            </div>
+
+        </Slider>
+        {/* <Carousel controls autoPlay interval={2000} >
             <div>
                 <img src={banner1} className='banner'/>
             </div>
             <div>
                 <img src={banner1} className='banner'/>
             </div>
-        </Carousel>
+        </Carousel> */}
     </div>
     <div className='mobile'>
-        <Carousel controls autoPlay interval={2000} >
+    <Slider {...settings}>
+            <div >
+            <img src={banner1} className='banner'/>
+            </div>
+            <div >
+            <img src={banner1} className='banner'/>
+            </div>
+        </Slider>       
+        {/* <Carousel controls autoPlay interval={2000} >
             <div>
                 <img src={banner2} className='banner'/>
             </div>
             <div>
                 <img src={banner2} className='banner'/>
             </div>
-        </Carousel>
+        </Carousel> */}
     </div>
 
     <div className='howwework'> 

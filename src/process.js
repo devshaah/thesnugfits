@@ -46,39 +46,39 @@ const Process = () => {
             <Slider {...settings}>
               <div className="probox-mob">
                 <img src={fabric} className="proimg-mob" alt="Fabric" />
-                <h3>Fabric Selection</h3>
+                <h3>1.Fabric Selection</h3>
               </div>
               <div className="probox-mob">
                 <img src={cutting} className="proimg-mob" alt="Cutting" />
-                <h3>Cutting</h3>
+                <h3>2.Cutting</h3>
               </div>
               <div className="probox-mob">
                 <img src={embroidery} className="proimg-mob" alt="Embroidery" />
-                <h3>Embroidery</h3>
+                <h3>3.Embroidery</h3>
               </div>
               <div className="probox-mob">
                 <img src={printing} className="proimg-mob" />
-                <h3>Printing</h3>
+                <h3>4.Printing</h3>
               </div>
               <div className="probox-mob">
                 <img src={sewing} className="proimg-mob" />
-                <h3>Sewing / Stiching</h3>
+                <h3>5.Sewing / Stiching</h3>
               </div>
               <div className="probox-mob">
                 <img src={ironing} className="proimg-mob" />
-                <h3>Ironing</h3>
+                <h3>6.Ironing</h3>
               </div>
               <div className="probox-mob">
                 <img src={checking} className="proimg-mob" />
-                <h3>Checking</h3>
+                <h3>7.Checking</h3>
               </div>
               <div className="probox-mob">
                 <img src={packing} className="proimg-mob" />
-                <h3>Packing</h3>
+                <h3>8.Packing</h3>
               </div>
               <div className="probox-mob">
                 <img src={delivery} className="proimg-mob" />
-                <h3>Delivery</h3>
+                <h3>9.Delivery</h3>
               </div>
             </Slider>
           </div>
