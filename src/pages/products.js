@@ -1,13 +1,15 @@
 import Navbar from "../components/navbar";
 import React, { useState } from "react";
 import "./product.css";
-import bar from "../assets/arrow.png";
+import up from "../assets/up.png";
+import downarrow from "../assets/down.png";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Footer from "../components/footer";
+
 import img5 from "../assets/images/men vest.jpg";
 import img6 from "../assets/images/oversize tshirt.jpg";
 import img7 from "../assets/images/poloneck men.jpg";
@@ -16,6 +18,8 @@ import img9 from "../assets/images/women oversize tshirt.jpg";
 import img10 from "../assets/images/crop regular.jpg";
 import img11 from "../assets/images/oversize tshirt crop.jpg";
 import img12 from "../assets/images/regular fit women.jpg";
+import img13 from "../assets/images/kids regular.jpg";
+import img14 from "../assets/images/kids oversize.jpg";
 
 import hmen from "../assets/images/men hoodie regular.jpg";
 import hmen2 from "../assets/images/men oversize hoodie.jpg";
@@ -35,12 +39,22 @@ import zwomen2 from "../assets/images/women zipper.jpg";
 import zwomen3 from "../assets/images/women oversize zipper.jpg";
 import zkid from "../assets/images/kids zipper.jpg";
 import zkid2 from "../assets/images/kids oversize zipper.jpg";
+import varsitym from "../assets/images/MEN VARSITY.jpg";
+import varsityw from "../assets/images/WOMEN VARSITY.jpg";
+import bomberm1 from "../assets/images/bomberm1.jpg";
+import bomberm2 from "../assets/images/bomberm2.jpg";
+import bomberw from "../assets/images/bomberw.jpg";
+
 
 import smen from "../assets/images/sweatshirt men.jpg";
 import smen2 from "../assets/images/men oversize sweatshirt.jpg";
 import swomen2 from "../assets/images/women regular sweatshirt.jpg";
 import swomen3 from "../assets/images/women oversize sweatshirt.jpg";
 import skid from "../assets/images/kids sweatshirt.jpg";
+
+import cap from '../assets/images/cap.jpg'
+import tote from '../assets/images/totebag.jpg'
+
 import { useNavigate } from "react-router-dom";
 
 const Products = ({ setmessage }) => {
@@ -49,7 +63,6 @@ const Products = ({ setmessage }) => {
     { title: "Oversized Tshirt", img: img6 },
     { title: "Vest", img: img5 },
     { title: "Oversized Sweatshirt", img: smen2 },
-    { title: "Polo Neck", img: img7 },
     { title: "Oversize Zipper", img: zwomen3 },
     { title: "Regular Fit", img: img8 },
     { title: "Regular Sweatshirt", img: skid },
@@ -59,10 +72,12 @@ const Products = ({ setmessage }) => {
     { title: "Oversized Crops ", img: img11 },
   ];
   const [data, setdata] = useState(demo);
-  const [show, setshow] = useState(false);
+  const [show, setshow] = useState(true);
+  const [down, setdown] = useState(true);
 
   const toggle = () => {
     setshow(!show);
+    setdown(!down)
   };
 
   const img = {
@@ -82,9 +97,8 @@ const Products = ({ setmessage }) => {
         { title: "Oversized Crops ", img: img11 },
       ],
       kid: [
-        { title: "Oversized Tshirt2 men" },
-        { title: "Oversized Tshirt3 men" },
-        { title: "Oversized Tshirt4 men" },
+        { title: "Oversized Tshirt ", img: img13 },
+        { title: "Regular Tshirt ", img: img14 },
       ],
     },
     hoodie: {
@@ -119,29 +133,27 @@ const Products = ({ setmessage }) => {
     zipper: {
       men: [
         { title: "Oversized Zipper", img: zmen2 },
+        { title: "Bomber Jacket", img: bomberm1},
+        { title: "Anime Bomber", img: bomberm2},
         { title: "Regular Zipper", img: zmen },
+        { title: "Varsity Jacket", img: varsitym }
+
       ],
       women: [
         { title: "Crop Zipper", img: zwomen },
         { title: "Oversize Zipper", img: zwomen3 },
+        { title: "Bomber Jacket", img: bomberw},
         { title: "Regular Zipper", img: zwomen2 },
+        { title: "Varsity Jacket", img: varsityw }
       ],
       kid: [
         { title: "Regular Zipper", img: zkid },
         { title: "Oversize Zipper", img: zkid2 },
       ],
     },
-    corporate: {
-      men: [{ title: "Corporate Men" }, { title: "Corporate Men" }],
-      women: [{ title: "Corporate Women" }, { title: "Corporate Women" }],
-    },
-    uniform: {
-      boy: [{ title: "Uniform Boy" }, { title: "Uniform Boy" }],
-      girl: [{ title: "Uniform girl" }, { title: "Uniform girl" }],
-    },
     accesories: {
-      caps: [{ title: "Cap1" }, { title: "Cap2" }, { title: "Cap3" }],
-      tote: [{ title: "Tote1" }, { title: "Tote2" }, { title: "Tote3" }],
+      caps: [{ title: "Cap", img: cap },],
+      tote: [{ title: "Tote Bag", img: tote },],
     },
   };
 
@@ -160,7 +172,14 @@ const Products = ({ setmessage }) => {
         <div className="accordion mobile">
           <div className="prodhead">
             <h4 className="head"> CATEGORIES</h4>
-            <img onClick={toggle} src={bar} className="navbtn" />
+            {
+              down 
+              ?
+              (<img onClick={toggle} src={downarrow} className="navbtn" />)
+              :
+              (<img onClick={toggle} src={up} className="navbtn" />)
+            }
+            
           </div>
           {show && (
             <div>
@@ -282,44 +301,6 @@ const Products = ({ setmessage }) => {
                 </AccordionDetails>
               </Accordion>
 
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className="header">UNIFORM</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    className="aclist"
-                    onClick={() => {
-                      setdata(img.zipper.men);
-                      toggle();
-                    }}
-                  >
-                    Men
-                  </Typography>
-                  <Typography
-                    className="aclist"
-                    onClick={() => {
-                      setdata(img.zipper.women);
-                      toggle();
-                    }}
-                  >
-                    Women
-                  </Typography>
-                  <Typography
-                    className="aclist"
-                    onClick={() => {
-                      setdata(img.zipper.kid);
-                      toggle();
-                    }}
-                  >
-                    Kids
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
 
               <Accordion>
                 <AccordionSummary
@@ -366,38 +347,6 @@ const Products = ({ setmessage }) => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography className="header">
-                    PROMOTIONAL CLOTHING
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    className="aclist"
-                    onClick={() => {
-                      setdata(img.corporate.men);
-                      toggle();
-                    }}
-                  >
-                    Men
-                  </Typography>
-                  <Typography
-                    className="aclist"
-                    onClick={() => {
-                      setdata(img.corporate.women);
-                      toggle();
-                    }}
-                  >
-                    Women
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
                   <Typography className="header">ACCESSORIES</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -418,30 +367,6 @@ const Products = ({ setmessage }) => {
                     }}
                   >
                     Tote Bags
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className="header">CUSTOMIZATION</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    className="aclist"
-                    onClick={() => setdata(img.corporate.men)}
-                  >
-                    Prints
-                  </Typography>
-                  <Typography
-                    className="aclist"
-                    onClick={() => setdata(img.corporate.women)}
-                  >
-                    Embroidery
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -580,30 +505,6 @@ const Products = ({ setmessage }) => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography className="header">PROMOTIONAL CLOTHING</Typography>
-              </AccordionSummary>
-              {/* <AccordionDetails>
-              <Typography
-                className="aclist"
-                onClick={() => setdata(img.corporate.men)}
-              >
-                
-              </Typography>
-              <Typography
-                className="aclist"
-                onClick={() => setdata(img.corporate.women)}
-              >
-                Women
-              </Typography>
-            </AccordionDetails> */}
-            </Accordion>
-
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
                 <Typography className="header">ACCESSORIES</Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -621,38 +522,14 @@ const Products = ({ setmessage }) => {
                 </Typography>
               </AccordionDetails>
             </Accordion>
-
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className="header">CUSTOMIZATION</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography
-                  className="aclist"
-                  onClick={() => setdata(img.corporate.men)}
-                >
-                  Prints
-                </Typography>
-                <Typography
-                  className="aclist"
-                  onClick={() => setdata(img.corporate.women)}
-                >
-                  Embroidery
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
           </div>
         </div>
 <div>
 
           <ul className="product-li">
-            <li >All types of Customization done.</li>
-            <li>Colours Options Available.</li>
-            <li>All Sizes Available.</li>
+            <li ><b>All types of Customization done.</b></li>
+            <li><b>Colour Options Available.</b></li>
+            <li><b>All Sizes Available.</b></li>
           </ul>
           <div className="displaybox">
           {data.map((item) => {

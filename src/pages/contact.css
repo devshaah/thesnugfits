@@ -11,6 +11,12 @@
   /* align-items: center; */
 }
 
+.map-img{
+  width: 50vw;
+  height: 60vh;
+  padding-top: 30px;
+}
+
 .details{
     text-align: left;
 }
@@ -104,6 +110,12 @@
   .map-container{
     flex-direction: column-reverse;
   }
+
+  .map-img{
+    width: 80vw;
+    height: 40vh;
+  }
+
   .form-container{
     width: 80vw;
   }

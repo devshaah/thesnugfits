@@ -120,28 +120,29 @@ h1,h2,h3,h4,h5,h5,p{
 
 .slide{
     margin: 0 ;
-    margin-top: 17vh;
-    height: 90vh;
-
+    margin-top: 5vh;
+    height: 95vh;
+    /* height: 100vh; */
     padding: 0;
 }
 
 .banner{
     margin: 0;
-    height: 90vh;
-    width: 100vw;
-
+    height: 100vh;
+    width: 99vw;
     padding: 0;
 }
 
 @media screen and (max-width: 480px){
     .slide{
-        height: 100vh;
-        width: 100vw;
+        margin-top: 10vh;
+        height: 90vh;
     }
 
     .banner{
-        height: 100vh;
+        margin-top: 10vh;
+
+        height: 90vh;
         width: 100vw;
     }
     
@@ -257,9 +258,9 @@ h1,h2,h3,h4,h5,h5,p{
 /* WHY CHOOSE US  */
 .whychooseus{
 background-color: white;
-padding: 3rem 2rem;
+padding: 3rem 1rem;
 color: black;
-border-bottom: 1PX solid black;
+border-bottom: 1px solid black;
 }
 
 .boxes{
@@ -269,7 +270,7 @@ border-bottom: 1PX solid black;
     justify-content: center;
     align-items: center;
     text-align: left;
-    gap: 1.2rem;
+    gap: 10px;
     margin: 3rem 0rem;
 }
 
@@ -322,7 +323,8 @@ border-bottom: 1PX solid black;
 }
 
 .no{
-    background-color: rgb(255, 255, 255);
+    background-color: black;
+    color: white;
     /* border: 0.1px solid black; */
     border-radius: 90px;
     padding: 0.6rem;
@@ -331,8 +333,8 @@ border-bottom: 1PX solid black;
 }
 
 .no:hover{
-        background: #040504;
-        color: white;
+        color: #040504;
+        background-color: white;
         transition: 0.1s ease-in
 }
 
@@ -364,7 +366,9 @@ border-bottom: 1PX solid black;
 /* AS SEEN ON  */
 
 .as-seen-on{
-    margin: 2rem 0px;
+    margin-top: 2rem;
+   margin-left: 2rem;
+   margin-bottom: 2rem;
 }
 
 .seenimg{
@@ -372,14 +376,17 @@ border-bottom: 1PX solid black;
     height: 35vh;
 }
 
-.seenon{
+/* .seenon{
     margin-left: 1rem;
-    /* width: 80vw; */
-}
+    width: 80vw; 
+} */
 
 @media screen and (max-width: 480px){
     .as-seen-on{
         overflow-x: hidden;
+        margin-left: 0;
+        background-color: black;
+        color: white;
     }
     .seenon{
         width: 80vw;
@@ -406,12 +413,13 @@ border-bottom: 1PX solid black;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     margin-top: 2rem;
 }
 
 .review{
     text-align: left;
-    width: 450px;
+    width: 400px;
 }
 
 @media screen and (max-width: 480px){

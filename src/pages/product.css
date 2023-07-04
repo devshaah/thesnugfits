@@ -24,13 +24,17 @@ body{
     flex-direction: row;
 }
 
+.MuiAccordionDetails-root{
+    border-top: 1px solid black;
+
+}
+
 .product-li{
     text-align: start;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     gap: 5vw;
-    margin-left: 3vw;
+    margin-left: -0.5vw;
 }
 
 .head{
@@ -73,9 +77,9 @@ body{
     width: 60vw;
 }
 
-.productname{
+/* .productname{
     width: 100%;
-}
+} */
 
 .quotebtn{
     width: 90%;
@@ -118,7 +122,9 @@ body{
     .productimg{
         width: 40vw;
     }
-
+    .quotebtn{
+        margin-right: 0;
+    }
 
 /* 
     .products{

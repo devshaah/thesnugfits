@@ -23,12 +23,39 @@ import dance from '../assets/services/dance events.jpg'
 
 const Clients = () => {
   const navigate = useNavigate();
+
+  const SampleNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "relative", background: "transparent" ,color: "black", height:"100%" , right:"0" , zIndex:"10" ,width:"30px",display:"flex",alignItems:"center",justifyContent:"center"}}
+        onClick={onClick}
+      />
+    );
+  }
+
+  const SamplePrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "relative", background: "transparent", height:"100%" , left:"0", zIndex:"10" ,width:"30px",display:"flex",alignItems:"center",justifyContent:"center",fontSize: "30px",}}
+        onClick={onClick}
+      />
+    );
+  }
+
+
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 500, // Adjust the breakpoint value as needed
@@ -70,7 +97,7 @@ const Clients = () => {
         </div>
       </div>
       <div className="as-seen-on">
-        <h2 style={{marginTop : "0px"}}>AS SEEN ON</h2>
+        <h2 ><b>AS SEEN ON</b></h2>
         <Slider {...settings}>
           <div className="seenon">
               <img src={school}  className="seenimg"/>

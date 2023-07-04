@@ -1,5 +1,4 @@
 import React, { useRef, useState, Component } from "react";
-import "./style.css";
 import fabric from "./assets/PROCESS/fabrics.png";
 import cutting from "./assets/PROCESS/cutting.jpg";
 import embroidery from "./assets/PROCESS/embroidery.jpg";
@@ -23,8 +22,8 @@ const Process = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 500, // Adjust the breakpoint value as needed

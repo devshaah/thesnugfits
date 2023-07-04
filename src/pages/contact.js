@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import Navbar from "../components/navbar";
 import "./contact.css";
+import map from '../assets/map.png'
+
 import GoogleMapReact from "google-map-react";
 import Footer from "../components/footer";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -52,15 +54,6 @@ const Contact = ({ messageinput }) => {
     setErrors({});
   };
 
-  const AnyReactComponent = ({ text }) => <div>{text}</div>;
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
-
   return (
     <div>
       <Navbar />
@@ -72,27 +65,9 @@ const Contact = ({ messageinput }) => {
       <div className="map-container">
         <div className="map">
           <h1>REACH US</h1>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: "" }}
-            defaultCenter={defaultProps.center}
-            defaultZoom={defaultProps.zoom}
-          >
-            <AnyReactComponent
-              lat={59.955413}
-              lng={30.337844}
-              text="My Marker"
-            />
-          </GoogleMapReact>
+          <a href="https://goo.gl/maps/8toRARVCBC1qpq9d8"><img src={map} className="map-img" /></a>       
         </div>
-        {/* <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form> */}
+        
         <form className="form-container" ref={form} onSubmit={handleSubmit}>
           <h2>GET IN TOUCH</h2>
           <div className="form-group">
@@ -178,7 +153,7 @@ const Contact = ({ messageinput }) => {
         <div className="details">
           <h1 className="detail-head">DETAILS</h1>
           <h4>
-            Call us at : <b>+91 98203 32671</b>
+            Call us at : <b>+91 98203 32671</b> / <b>+91 97736 99251</b>
           </h4>
           <h4>
             Email us at : <b>thesnugstitches@gmail.com</b>
@@ -216,23 +191,3 @@ const Contact = ({ messageinput }) => {
 };
 
 export default Contact;
-
-// if (!name.trim()) {
-//   validationErrors.name = "Name is required";
-// }
-
-// if (!email.trim()) {
-//   validationErrors.email = "Email is required";
-// } else if (!/\S+@\S+\.\S+/.test(email)) {
-//   validationErrors.email = "Email is invalid";
-// }
-
-// if (!number.trim()) {
-//   validationErrors.number = "Number is required";
-// } else if (number.length != 10) {
-//   validationErrors.number = "Invalid Number";
-// }
-
-// if (Object.keys(validationErrors).length > 0) {
-//   setErrors(validationErrors);
-// } else {
