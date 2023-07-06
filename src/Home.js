@@ -71,7 +71,7 @@ const Home = () => {
 
   const prod = [
     { title: "Oversized Hoodie", img: hmen2 },
-    { title: "Oversize Sweatshirt", img: swomen3 },
+    { title: "Sweatshirt", img: swomen3 },
     { title: "Varsity Jacket", img: varsitym },
     { title: "Oversize Zipper", img: zmen2 },
   ];
