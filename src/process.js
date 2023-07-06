@@ -1,4 +1,4 @@
-import React, { useRef, useState, Component } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import fabric from "./assets/PROCESS/fabrics.png";
 import cutting from "./assets/PROCESS/cutting.jpg";
 import embroidery from "./assets/PROCESS/embroidery.jpg";
@@ -13,9 +13,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const config = {
+  rootMargin: "200px 0px 0px 0px",
+  threshold: "0",
+};
+
 const Process = () => {
   const boxRef = useRef(null);
-
+  const [load, setload] = useState(false);
   const settings = {
     dots: false,
     infinite: true,
@@ -35,6 +40,30 @@ const Process = () => {
       },
     ],
   };
+  const loadimg = (image) => {
+    image.src = image.dataset.src;
+  };
+
+  useEffect(() => {
+    let observer = new window.IntersectionObserver((entries, self) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadimg(entry.target);
+          self.unobserve(entry.target);
+        }
+      });
+    }, config);
+    const imgs = document.querySelectorAll("[data-src]");
+    imgs.forEach((img) => {
+      observer.observe(img);
+    });
+
+    return () => {
+      imgs.forEach((img) => {
+        observer.unobserve(img);
+      });
+    };
+  }, []);
 
   return (
     <div>
@@ -44,39 +73,87 @@ const Process = () => {
           <div>
             <Slider {...settings}>
               <div className="probox-mob">
-                <img src={fabric} className="proimg-mob" alt="Fabric" />
+                <img
+                  data-src={fabric}
+                  className={load ? "loaded proimg-mob" : "loading proimg-mob "}
+                  alt="Fabric"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>1.Fabric Selection</h3>
               </div>
               <div className="probox-mob">
-                <img src={cutting} className="proimg-mob" alt="Cutting" />
+                <img
+                  data-src={cutting}
+                  className="proimg-mob"
+                  alt="Cutting"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>2.Cutting</h3>
               </div>
               <div className="probox-mob">
-                <img src={embroidery} className="proimg-mob" alt="Embroidery" />
+                <img
+                  data-src={embroidery}
+                  className="proimg-mob"
+                  alt="Embroidery"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>3.Embroidery</h3>
               </div>
               <div className="probox-mob">
-                <img src={printing} className="proimg-mob" />
+                <img
+                  data-src={printing}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>4.Printing</h3>
               </div>
               <div className="probox-mob">
-                <img src={sewing} className="proimg-mob" />
+                <img
+                  data-src={sewing}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>5.Sewing / Stiching</h3>
               </div>
               <div className="probox-mob">
-                <img src={ironing} className="proimg-mob" />
+                <img
+                  data-src={ironing}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>6.Ironing</h3>
               </div>
               <div className="probox-mob">
-                <img src={checking} className="proimg-mob" />
+                <img
+                  data-src={checking}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>7.Checking</h3>
               </div>
               <div className="probox-mob">
-                <img src={packing} className="proimg-mob" />
+                <img
+                  data-src={packing}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>8.Packing</h3>
               </div>
               <div className="probox-mob">
-                <img src={delivery} className="proimg-mob" />
+                <img
+                  data-src={delivery}
+                  className="proimg-mob"
+                  src={""}
+                  onLoad={() => setload(true)}
+                />
                 <h3>9.Delivery</h3>
               </div>
             </Slider>
@@ -84,39 +161,84 @@ const Process = () => {
         </div>
         <div className="process desktop">
           <div className="processbox">
-            <img src={fabric} className="processimg" />
+            <img
+              data-src={fabric}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Fabric Selection</h3>
           </div>
           <div className="processbox">
-            <img src={cutting} className="processimg" />
+            <img
+              data-src={cutting}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Cutting</h3>
           </div>
           <div className="processbox">
-            <img src={embroidery} className="processimg" />
+            <img
+              data-src={embroidery}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Embroidery</h3>
           </div>
           <div className="processbox">
-            <img src={printing} className="processimg" />
+            <img
+              data-src={printing}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Printing</h3>
           </div>
           <div className="processbox">
-            <img src={sewing} className="processimg" />
+            <img
+              data-src={sewing}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Sewing / Stiching</h3>
           </div>
           <div className="processbox">
-            <img src={ironing} className="processimg" />
+            <img
+              data-src={ironing}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Ironing</h3>
           </div>
           <div className="processbox">
-            <img src={checking} className="processimg" />
+            <img
+              data-src={checking}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Checking</h3>
           </div>
           <div className="processbox">
-            <img src={packing} className="processimg" />
+            <img
+              data-src={packing}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Packing</h3>
           </div>
           <div className="processbox">
-            <img src={delivery} className="processimg" />
+            <img
+              data-src={delivery}
+              className="processimg"
+              src={""}
+              onLoad={() => setload(true)}
+            />
             <h3>Delivery</h3>
           </div>
         </div>

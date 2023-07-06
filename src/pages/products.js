@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./product.css";
 import up from "../assets/up.png";
 import downarrow from "../assets/down.png";
@@ -45,20 +45,23 @@ import bomberm1 from "../assets/images/bomberm1.jpg";
 import bomberm2 from "../assets/images/bomberm2.jpg";
 import bomberw from "../assets/images/bomberw.jpg";
 
-
 import smen from "../assets/images/sweatshirt men.jpg";
 import smen2 from "../assets/images/men oversize sweatshirt.jpg";
 import swomen2 from "../assets/images/women regular sweatshirt.jpg";
 import swomen3 from "../assets/images/women oversize sweatshirt.jpg";
 import skid from "../assets/images/kids sweatshirt.jpg";
 
-import cap from '../assets/images/cap.jpg'
-import tote from '../assets/images/totebag.jpg'
+import cap from "../assets/images/cap.jpg";
+import tote from "../assets/images/totebag.jpg";
 
 import { useNavigate } from "react-router-dom";
 
 const Products = ({ setmessage }) => {
   const navigate = useNavigate();
+
+  const [show, setshow] = useState(true);
+  const [down, setdown] = useState(true);
+  const [load, setload] = useState(false);
   const demo = [
     { title: "Oversized Tshirt", img: img6 },
     { title: "Vest", img: img5 },
@@ -72,12 +75,9 @@ const Products = ({ setmessage }) => {
     { title: "Oversized Crops ", img: img11 },
   ];
   const [data, setdata] = useState(demo);
-  const [show, setshow] = useState(true);
-  const [down, setdown] = useState(true);
-
   const toggle = () => {
     setshow(!show);
-    setdown(!down)
+    setdown(!down);
   };
 
   const img = {
@@ -133,18 +133,17 @@ const Products = ({ setmessage }) => {
     zipper: {
       men: [
         { title: "Oversized Zipper", img: zmen2 },
-        { title: "Bomber Jacket", img: bomberm1},
-        { title: "Anime Bomber", img: bomberm2},
+        { title: "Bomber Jacket", img: bomberm1 },
+        { title: "Anime Bomber", img: bomberm2 },
         { title: "Regular Zipper", img: zmen },
-        { title: "Varsity Jacket", img: varsitym }
-
+        { title: "Varsity Jacket", img: varsitym },
       ],
       women: [
         { title: "Crop Zipper", img: zwomen },
         { title: "Oversize Zipper", img: zwomen3 },
-        { title: "Bomber Jacket", img: bomberw},
+        { title: "Bomber Jacket", img: bomberw },
         { title: "Regular Zipper", img: zwomen2 },
-        { title: "Varsity Jacket", img: varsityw }
+        { title: "Varsity Jacket", img: varsityw },
       ],
       kid: [
         { title: "Regular Zipper", img: zkid },
@@ -152,12 +151,10 @@ const Products = ({ setmessage }) => {
       ],
     },
     accesories: {
-      caps: [{ title: "Cap", img: cap },],
-      tote: [{ title: "Tote Bag", img: tote },],
+      caps: [{ title: "Cap", img: cap }],
+      tote: [{ title: "Tote Bag", img: tote }],
     },
   };
-
-  console.log(data);
 
   return (
     <div>
@@ -172,14 +169,11 @@ const Products = ({ setmessage }) => {
         <div className="accordion mobile">
           <div className="prodhead">
             <h4 className="head"> CATEGORIES</h4>
-            {
-              down 
-              ?
-              (<img onClick={toggle} src={downarrow} className="navbtn" />)
-              :
-              (<img onClick={toggle} src={up} className="navbtn" />)
-            }
-            
+            {down ? (
+              <img onClick={toggle} src={downarrow} className="navbtn" />
+            ) : (
+              <img onClick={toggle} src={up} className="navbtn" />
+            )}
           </div>
           {show && (
             <div>
@@ -300,7 +294,6 @@ const Products = ({ setmessage }) => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-
 
               <Accordion>
                 <AccordionSummary
@@ -524,34 +517,44 @@ const Products = ({ setmessage }) => {
             </Accordion>
           </div>
         </div>
-<div>
-
+        <div>
           <ul className="product-li">
-            <li ><b>All types of Customization done.</b></li>
-            <li><b>Colour Options Available.</b></li>
-            <li><b>All Sizes Available.</b></li>
+            <li>
+              <b>All types of Customization done.</b>
+            </li>
+            <li>
+              <b>Colour Options Available.</b>
+            </li>
+            <li>
+              <b>All Sizes Available.</b>
+            </li>
           </ul>
           <div className="displaybox">
-          {data.map((item) => {
-            return (
-              <div>
-                <div class="productbox">
-                  <img src={item.img} className="productimg" />
-                  <h4 className="productname">{item.title}</h4>
+            {data.map((item) => {
+              return (
+                <div>
+                  <div class="productbox">
+                    <img
+
+                      className= {load ? "loaded productimg" : "loading productimg"}
+                      src={item.img}
+                      onLoad={() => setload(true)}
+                    />
+                    <h4 className="productname">{item.title}</h4>
+                  </div>
+                  <button
+                    className="quotebtn"
+                    onClick={() => {
+                      setmessage(item.title);
+                      navigate("/contact");
+                    }}
+                  >
+                    Get Quote
+                  </button>
                 </div>
-                <button
-                  className="quotebtn"
-                  onClick={() => {
-                    setmessage(item.title);
-                    navigate("/contact");
-                  }}
-                >
-                  Get Quote
-                </button>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <Footer />

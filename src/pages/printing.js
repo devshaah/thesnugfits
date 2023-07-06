@@ -5,7 +5,7 @@ import "./printing.css";
 import dtf from "../assets/printing/6 DTF.jpg";
 import embroidery from "../assets/printing/embroidery.jpg";
 import gold from "../assets/printing/gold.jpg";
-import sublimation from "../assets/printing/sublimation.jpeg";
+import sublimation from "../assets/printing/sublimation.jpg";
 import puff from "../assets/printing/puff.jpg";
 import reflective from "../assets/printing/reflective.jpg";
 import screen from "../assets/printing/screen.jpg";

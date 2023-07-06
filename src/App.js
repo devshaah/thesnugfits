@@ -8,13 +8,32 @@ import About from './pages/about';
 import Services from './pages/services';
 import Printing from './pages/printing';
 import Clients from './pages/clients';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import logo1 from "./assets/loader.gif";
+import ReactGA from 'react-ga4'
+
+const TRACKING_ID= 'G-EKW58YBDXM'
+ReactGA.initialize(TRACKING_ID)
+ReactGA._gaCommandSendPageview(window.location.pathname);
 
 function App() {
   const [messageinput,setmessage] = useState("");
-  console.log("Home Page " + messageinput)
+  const [show,setshow] = useState(true);
+  useEffect(()=>{
+    setTimeout(() => {
+      setshow(false)
+    },1200);
+  },[])
+
   return (
     <div className="App">
+            {
+        show 
+        ?
+        <div style={{background:"rgb(177, 177, 177)",height:"100vh",width:"100vw",display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <img src={logo1} style={{height:"150px",animation: "rotate 1s infinite linear"}}/>
+        </div>
+        :
       <Router>
               <Routes>
               <Route exact path="/" element={<Home/>}/>
@@ -25,7 +44,8 @@ function App() {
               <Route exact path="/printing" element={<Printing/>}/>
               <Route exact path="/clients" element={<Clients/>}/>
               </Routes>
-      </Router>  
+      </Router> 
+} 
     </div>
   );
 }

@@ -17,6 +17,8 @@
     "google-map-react": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",

@@ -14,6 +14,27 @@ h1,h2,h3,h4,h5,h5,p{
     font-weight: 1500;
 }
 
+.loading{
+    filter: blur(10px);
+    clip-path: inset(0);
+}
+
+.loaded{
+    filter: blur(0px);
+    transition: filter 0.5s linear;
+}
+
+/* .load img{
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.load.loaded img{
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+} */
+
+
 /* NAVBAR */
 
 .nav{
@@ -32,7 +53,7 @@ h1,h2,h3,h4,h5,h5,p{
 }
 
 .backdrop{
-    background-image: url(./assets/bannerr.png);
+    background-image: url(./assets/bannerr.jpg);
     margin-top: 17vh;
     height: 20vh;
     color: white;

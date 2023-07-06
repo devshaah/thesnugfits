@@ -1,28 +1,23 @@
-import React from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import ReactGA from 'react-ga4'
 import Navbar from "./components/navbar";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
-
-// import banner1 from './assets/banner1.png'
 import banner1 from "./assets/banner1.jpg";
 import banner2 from "./assets/banner2.jpg";
-import banner3 from "./assets/banner3.jpg"
-import banner4 from "./assets/banner4.jpg"
-import mobban1 from './assets/mobban1.jpg'
-
-import Services from "./pages/services";
+import banner3 from "./assets/banner3.jpg";
+import banner4 from "./assets/banner4.jpg";
+import mobban1 from "./assets/mobban1.jpg";
 import Footer from "./components/footer";
-import logo from "./assets/logo.jpg";
 import Process from "./process";
 import atharva from "./assets/clients/atharva.png";
 import thakur from "./assets/clients/5ntf3oqg.jbg.webp";
 import fm from "./assets/clients/3FM LOGO.jpeg";
 import besick from "./assets/clients/BESICK LOGO.png";
-import secureanx from "./assets/clients/securanx.png";
-import koverify from "./assets/clients/koverify.png";
+import secureanx from "./assets/clients/securanx.jpg";
+import koverify from "./assets/clients/koverify.jpg";
 
 import fabric from "./assets/sticker/quality.png";
 import handcrafted from "./assets/sticker/handcrafted.png";
@@ -33,8 +28,17 @@ import review1 from "./assets/reviews/review 1.png";
 import review2 from "./assets/reviews/review 2.png";
 import review3 from "./assets/reviews/review 3.png";
 
+const config = {
+  rootMargin: "200px 0px 0px 0px",
+  threshold: "0",
+};
+
 const Home = () => {
   const navigate = useNavigate();
+  const [load, setload] = useState(false);
+  const image = {
+    alt: "loading..",
+  };
 
   const settings = {
     dots: true,
@@ -46,15 +50,40 @@ const Home = () => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 500, // Adjust the breakpoint value as needed
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true, // Optionally hide the arrows on mobile
+          arrows: true,
         },
       },
     ],
   };
+
+  const loadimg = (image) => {
+    image.src = image.dataset.src;
+  };
+
+  useEffect(() => {
+    let observer = new window.IntersectionObserver((entries, self) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadimg(entry.target);
+          self.unobserve(entry.target);
+        }
+      });
+    }, config);
+    const imgs = document.querySelectorAll("[data-src]");
+    imgs.forEach((img) => {
+      observer.observe(img);
+    });
+
+    return () => {
+      imgs.forEach((img) => {
+        observer.unobserve(img);
+      });
+    };
+  }, []);
 
   return (
     <div>
@@ -63,27 +92,81 @@ const Home = () => {
       <div className="desktop">
         <Slider {...settings}>
           <div className="slide">
-            <a onClick={()=>navigate('/contact')} style={{cursor:"pointer"}}><img src={banner1} className="banner" /></a> 
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={""}
+                data-src={banner1}
+                className="banner"
+                loading="lazy"
+              />
+            </a>
           </div>
           <div className="slide">
-            <a onClick={()=>navigate('/contact')} style={{cursor:"pointer"}}><img src={banner2} className="banner" /></a> 
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={banner2}
+                className="banner"
+                loading="lazy"
+              />
+            </a>
           </div>
           <div className="slide">
-            <a onClick={()=>navigate('/contact')} style={{cursor:"pointer"}}><img src={banner3} className="banner" /></a> 
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={banner3}
+                className="banner"
+                loading="lazy"
+              />
+            </a>
           </div>
           <div className="slide">
-            <a onClick={()=>navigate('/contact')} style={{cursor:"pointer"}}><img src={banner4} className="banner" /></a> 
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={banner4}
+                className="banner"
+                loading="lazy"
+              />
+            </a>
           </div>
         </Slider>
-
       </div>
       <div className="mobile">
         <Slider {...settings}>
           <div>
-          <a onClick={()=>navigate('/contact')} style={{cursor:"pointer"}}><img src={mobban1} className="banner" /></a> 
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={mobban1}
+                className="banner"
+                loading="lazy"
+              />
+            </a>
           </div>
         </Slider>
-
       </div>
 
       <div className="howwework">
@@ -224,12 +307,60 @@ const Home = () => {
       <div id="clie" className="ourclients">
         <h1 className="header">OUR CLIENTS</h1>
         <div className="clients">
-          <img src={atharva} className="client" />
-          <img src={thakur} className="client" />
-          <img src={fm} className="client" />
-          <img src={besick} className="client" />
-          <img src={secureanx} className="client" />
-          <img src={koverify} className="client" />
+          <img
+            alt={image.alt}
+            effect="blur"
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            data-src={atharva}
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            data-src={thakur}
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            data-src={fm}
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            data-src={besick}
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            data-src={secureanx}
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            data-src={koverify}
+            className={load ? "loaded client" : "loading client "}
+            loading="lazy"
+            src={""}
+            onLoad={() => setload(true)}
+          />
         </div>
         <h4>Want to be our Client?</h4>
         <button
@@ -244,9 +375,35 @@ const Home = () => {
       <div className="testimons">
         <h1 className="header">HEAR FROM OUR CUSTOMERS</h1>
         <div className="testimonials">
-          <img className="review" src={review1} />
-          <img className="review" src={review2} />
-          <img className="review" src={review3} />
+          <img
+            alt={image.alt}
+            effect="blur"
+            className={load ? "loaded review" : "loading review "}
+            loading="lazy"
+            data-src={review1}
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <img
+            alt={image.alt}
+            effect="blur"
+            className={load ? "loaded review" : "loading review "}
+            loading="lazy"
+            data-src={review2}
+            src={""}
+            onLoad={() => setload(true)}
+          />
+          <Suspense>
+            <img
+              alt={image.alt}
+              effect="blur"
+              className={load ? "loaded review" : "loading review "}
+              loading="lazy"
+              data-src={review3}
+              src={""}
+              onLoad={() => setload(true)}
+            />
+          </Suspense>
         </div>
       </div>
 
@@ -261,4 +418,5 @@ const Home = () => {
   );
 };
 
+// export default trackWindowScroll(Home);
 export default Home;
