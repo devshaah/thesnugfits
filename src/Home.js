@@ -1,15 +1,18 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-import ReactGA from 'react-ga4'
+import ReactGA from "react-ga4";
 import Navbar from "./components/navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
-import banner1 from "./assets/banner1.jpg";
-import banner2 from "./assets/banner2.jpg";
-import banner3 from "./assets/banner3.jpg";
-import banner4 from "./assets/banner4.jpg";
+import banner4 from "./assets/banner1.jpg";
+import banner1 from "./assets/banner2.jpg";
+import banner2 from "./assets/banner3.jpg";
+import banner3 from "./assets/banner4.jpg";
 import mobban1 from "./assets/mobban1.jpg";
+import mobban2 from "./assets/mobban2.jpg";
+import mobban3 from "./assets/mobban3.jpg";
+
 import Footer from "./components/footer";
 import Process from "./process";
 import atharva from "./assets/clients/atharva.png";
@@ -27,6 +30,11 @@ import delivery from "./assets/sticker/delivery (1).png";
 import review1 from "./assets/reviews/review 1.png";
 import review2 from "./assets/reviews/review 2.png";
 import review3 from "./assets/reviews/review 3.png";
+
+import zmen2 from "./assets/images/men oversize zipper.jpg";
+import hmen2 from "./assets/images/men oversize hoodie.jpg";
+import varsitym from "./assets/images/MEN VARSITY.jpg";
+import swomen3 from "./assets/images/women oversize sweatshirt.jpg";
 
 const config = {
   rootMargin: "200px 0px 0px 0px",
@@ -52,6 +60,7 @@ const Home = () => {
       {
         breakpoint: 500,
         settings: {
+          dots:false,
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
@@ -59,6 +68,13 @@ const Home = () => {
       },
     ],
   };
+
+  const prod = [
+    { title: "Oversized Hoodie", img: hmen2 },
+    { title: "Oversize Sweatshirt", img: swomen3 },
+    { title: "Varsity Jacket", img: varsitym },
+    { title: "Oversize Zipper", img: zmen2 },
+  ];
 
   const loadimg = (image) => {
     image.src = image.dataset.src;
@@ -86,7 +102,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{overflowX:"hidden"}}>
       <Navbar />
 
       <div className="desktop">
@@ -152,7 +168,6 @@ const Home = () => {
       </div>
       <div className="mobile">
         <Slider {...settings}>
-          <div>
             <a
               onClick={() => navigate("/contact")}
               style={{ cursor: "pointer" }}
@@ -161,11 +176,44 @@ const Home = () => {
                 alt={image.alt}
                 effect="blur"
                 src={mobban1}
-                className="banner"
+                className={
+                  load ? "loaded banner" : "loading banner"
+                }
                 loading="lazy"
+                onLoad={() => setload(true)}
               />
             </a>
-          </div>
+
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={mobban2}
+                className={
+                  load ? "loaded banner" : "loading banner"
+                }
+                loading="lazy"
+                onLoad={() => setload(true)}
+              />
+            </a>
+            <a
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                alt={image.alt}
+                effect="blur"
+                src={mobban3}
+                className={
+                  load ? "loaded banner" : "loading banner"
+                }
+                loading="lazy"
+                onLoad={() => setload(true)}
+              />
+            </a>
         </Slider>
       </div>
 
@@ -304,6 +352,43 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+
+      <div className="Products mobile" style={{ marginTop: "20px"}}>
+        <h1>
+          <b>HOT SELLING</b>
+        </h1>
+        <div className="displaybox">
+          {prod.map((item) => {
+            return (
+              <div>
+                <div class="productbox">
+                  <img
+                    className={
+                      load ? "loaded productimg" : "loading productimg"
+                    }
+                    src={item.img}
+                    onLoad={() => setload(true)}
+                  />
+                  <h4 className="productname">{item.title}</h4>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <button
+          className="quotebtn"
+          onClick={() => {
+            navigate("/products");
+          }}
+        >
+          View More..
+        </button>
+      </div> 
+
+      <Process />
+
       <div id="clie" className="ourclients">
         <h1 className="header">OUR CLIENTS</h1>
         <div className="clients">
@@ -362,6 +447,8 @@ const Home = () => {
             onLoad={() => setload(true)}
           />
         </div>
+        <div>
+
         <h4>Want to be our Client?</h4>
         <button
           onClick={() => navigate("/contact")}
@@ -369,8 +456,8 @@ const Home = () => {
         >
           Contact Us
         </button>
+        </div>
       </div>
-      <Process />
 
       <div className="testimons">
         <h1 className="header">HEAR FROM OUR CUSTOMERS</h1>
@@ -407,7 +494,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="homecontact">
+      <div className="homecontact" style={{marginBottom:"20px"}}>
         <h1>WORK WITH US ?</h1>
         <button onClick={() => navigate("/contact")} className="contactbtn">
           Contact Us

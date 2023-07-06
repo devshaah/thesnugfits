@@ -170,9 +170,9 @@ const Products = ({ setmessage }) => {
           <div className="prodhead">
             <h4 className="head"> CATEGORIES</h4>
             {down ? (
-              <img onClick={toggle} src={downarrow} className="navbtn" />
+              <img onClick={toggle} src={up } className="navbtn" />
             ) : (
-              <img onClick={toggle} src={up} className="navbtn" />
+              <img onClick={toggle} src={downarrow} className="navbtn" />
             )}
           </div>
           {show && (
