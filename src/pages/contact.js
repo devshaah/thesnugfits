@@ -179,9 +179,9 @@ const Contact = ({ messageinput }) => {
             <a href="" className="social-icon">
               <FacebookIcon style={{ fontSize: "3rem" }} />
             </a>
-            <a href="" className="social-icon">
+            {/* <a href="" className="social-icon">
               <TwitterIcon style={{ fontSize: "3rem" }} />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

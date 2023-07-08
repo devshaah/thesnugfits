@@ -22,7 +22,7 @@ function App() {
   useEffect(()=>{
     setTimeout(() => {
       setshow(false)
-    },1200);
+    },1000);
   },[])
 
   return (
